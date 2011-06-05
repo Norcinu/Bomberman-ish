@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{31a793e6-40f0-476b-8c91-1e034cdde365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{20bba619-55e1-4210-9709-66520cd041bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{19d7a247-f895-4994-955d-196a8037bf92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Entities">
+      <UniqueIdentifier>{5872f38a-c706-475d-a194-00da1c5b9b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{ebf6b126-7bd9-482d-a458-e0ca7b117a26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{7c5dc5ea-2a93-43d2-8e2a-05ae998da78f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Messages">
+      <UniqueIdentifier>{f664d71c-5f62-46c0-adbc-be9cbe01e2cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Entities\Entity States">
+      <UniqueIdentifier>{411659ed-b05e-437c-b87d-109c774424c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{dd003872-19c0-492b-b092-ba41aab306a2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="AStar.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="maths.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualisation.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapFont.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseEntity.cpp">
+      <Filter>Game\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerEntity.cpp">
+      <Filter>Game\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Events.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="BombEntity.cpp">
+      <Filter>Game\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Profiler.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenu.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Messenger.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="BotEntity.cpp">
+      <Filter>Game\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="BotStates.cpp">
+      <Filter>Game\Entities\Entity States</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AStar.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="maths.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL_Collide.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualisation.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapFont.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseEntity.h">
+      <Filter>Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityImpl.h">
+      <Filter>Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerEntity.h">
+      <Filter>Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="BombEntity.h">
+      <Filter>Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Profiler.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMenu.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Messenger.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageEvent.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Game\Entities\Entity States</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Game\Entities\Entity States</Filter>
+    </ClInclude>
+    <ClInclude Include="BotEntity.h">
+      <Filter>Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="BotStates.h">
+      <Filter>Game\Entities\Entity States</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitySystem.h">
+      <Filter>Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
