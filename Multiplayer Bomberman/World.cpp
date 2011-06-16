@@ -63,9 +63,9 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
 		return false;
 
 	AddPlayer(gid1);
-	AddPlayer(gid1);
-	AddPlayer(gid1);
-	AddPlayer(gid1);
+	//AddPlayer(gid1);
+	//AddPlayer(gid1);
+	//AddPlayer(gid1);
 	
 	if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\bomb.spr")))
 		return false;
@@ -120,6 +120,9 @@ void World::Move(const int id, const math::Vector2& direction)
 		std::cout << "position : " << entities[id]->GetPosition() << std::endl;
 #endif
 	}
+
+	/*game_entities[id].GetAs<Position2D>()->position += direction;
+	game_entities[id].GetAs<Position2D>()->previous_position = */
 }
 
 void World::Action(const int id)
@@ -156,8 +159,10 @@ void World::Update()
 
 	if (game_timer->Milliseconds() - update_delta > tick_rate)
 	{
-		std::for_each(entities.begin(), entities.end(), std::mem_fun(&BaseEntity::Update));
-		std::for_each(bomb_list.begin(), bomb_list.end(), std::mem_fun(&BombEntity::Update));
+		std::for_each(entities.begin(), entities.end(), [](BaseEntity* ent) { ent->Update(); });
+		std::for_each(bomb_list.begin(), bomb_list.end(), [](BombEntity *b) { b->Update(); });
+		/*std::for_each(entities.begin(), entities.end(), std::mem_fun(&BaseEntity::Update));
+		std::for_each(bomb_list.begin(), bomb_list.end(), std::mem_fun(&BombEntity::Update));*/
 	}
 
 	// collision loop. can we sort these by x and y position?
@@ -168,6 +173,8 @@ void World::Update()
 			//std::cout << "j : " << j << std::endl;
 		}
 	}
+
+	//Position2D *pos=entity_system[0].getAs<Position2D>();
 }
 
 void World::Render(Visualisation* vis) const
@@ -216,8 +223,13 @@ bool World::ChangeLevel(const std::string& level_name)
 
 math::Vector2& World::FindFirstSpawn() const
 {
-	std::vector<SpawnPoint_t*>::const_iterator itor;
-	itor = std::find_if(spawns.begin(), spawns.end(), boost::bind(&SpawnPoint_t::is_available,_1)==true);
+	//std::vector<SpawnPoint_t*>::const_iterator itor;
+	//itor = std::find_if(spawns.begin(), spawns.end(), boost::bind(&SpawnPoint_t::is_available,_1)==true);
+	auto itor = std::find_if(spawns.begin(), spawns.end(), [](SpawnPoint_t* sp) -> bool { 
+		std::cout << "Testing if position is free " << sp->position << std::endl;
+		return sp->is_available; 
+	});
+
 	(*itor)->is_available = false;
 	return (*itor)->position;
 }
@@ -235,12 +247,42 @@ void World::AddPlayer(const int id)
 
 	PlayerEntity *p = new PlayerEntity(temp);
 	entities.push_back(p);
+
+	
+	///----------- NEW ENTITY SYSTEM
+	// Components used by every entity.
+	for (int i = 0; i < MAX_PLAYERS; ++i)
+	{
+		Position2D *position = new Position2D;
+		Drawable *drawable = new Drawable;
+		Collision *collision = new Collision;
+
+		entity_system.AddComponent(&game_entities[i], position);
+		entity_system.AddComponent(&game_entities[i], drawable);
+		entity_system.AddComponent(&game_entities[i], collision);
+	}
+
+	// Components for non-players entities.
+	// assume player is always entity 0.
+	for(int i=1; i < MAX_PLAYERS; ++i)
+	{
+		MyFSM *fsm = new MyFSM;
+		Pathfinder *pf = new Pathfinder;
+		
+		entity_system.AddComponent(&game_entities[i], fsm);
+		entity_system.AddComponent(&game_entities[i], pf);
+	}
+
 }
 
 void World::FreeSpawnPoint(const math::Vector2& position)
 {
-	std::vector<SpawnPoint_t*>::const_iterator itor;
-	itor = std::find_if(spawns.begin(), spawns.end(), boost::bind(&SpawnPoint_t::ComparePosition,_1, position) == true);
+	//std::vector<SpawnPoint_t*>::const_iterator itor;
+	//itor = std::find_if(spawns.begin(), spawns.end(), boost::bind(&SpawnPoint_t::ComparePosition,_1, position) == true);
+	auto itor = std::find_if(spawns.begin(), spawns.end(), [&](SpawnPoint_t* sp) -> bool { 
+		std::cout << "Testing if position is free " << sp->position << std::endl;
+		return sp->position == position; 
+	});
 	(*itor)->is_available = true;
 }
 

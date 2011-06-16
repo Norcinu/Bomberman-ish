@@ -12,7 +12,6 @@
 #include "Engine.h"
 #include "SplashState.h"
 
-// brap brap.
 int main(int argc, char *argv[])
 {
 	Engine *engine = new Engine;

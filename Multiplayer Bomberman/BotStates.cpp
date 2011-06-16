@@ -41,7 +41,7 @@ namespace entityFSM
 	
 	IdleState * IdleState::GetInstance()
 	{
-		IdleState instance;
+		static IdleState instance;
 		return &instance;
 	}
 

@@ -84,7 +84,7 @@ Type* Entity::GetAs()
 
 struct Position2D : public Component 
 {
-	static const FamilyId id = 0;
+	static const FamilyId familyId = 0;
 	math::Vector2 position;
 	math::Vector2 previous_position;
 
@@ -93,12 +93,12 @@ struct Position2D : public Component
 
 struct EntityExplosion : public Component
 {
-	static const FamilyId id = 1;
+	static const FamilyId familyId = 1;
 };
 
 struct MyFSM : public Component
 {
-	static const FamilyId id = 2;
+	static const FamilyId familyId = 2;
 	class FSM : public entityFSM::StateMachine<Entity*>
 	{
 	};
@@ -106,17 +106,18 @@ struct MyFSM : public Component
 
 struct Collision : public Component
 {
-	static const FamilyId id = 3;
+	static const FamilyId familyId = 3;
 };
 
 struct Drawable : public Component
 {
-	static const FamilyId id = 4;
+	static const FamilyId familyId = 4;
 };
 
 struct Pathfinder : public Component
 {
-	static const FamilyId id = 5;
+	static const FamilyId familyId = 5;
 	AStar * astar_pathfinder;
 };
+
 #endif

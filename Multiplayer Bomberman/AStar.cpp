@@ -25,8 +25,6 @@ AStar::~AStar()
 
 void AStar::Search( std::vector<node_t>& path, const math::Vector2& position, const math::Vector2& goal )
 {
-	Timer t;
-
 	int ID = 1;
 	
 	node_t start_node;
@@ -119,12 +117,8 @@ void AStar::Search( std::vector<node_t>& path, const math::Vector2& position, co
 			}
 		}
 	}
-
-	std::cout << "Time taken to find path : " << t.Milliseconds() << "ms." << std::endl;
-	std::cout << t.Seconds() << " Seconds." << std::endl;
 	
 	path = successors;
-	std::cout << "Size of route = " << successors.size() << std::endl;	
 
 	open_list.clear();
 	closed_list.clear();
