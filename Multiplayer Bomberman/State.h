@@ -15,4 +15,5 @@ namespace entityFSM
 		virtual void Exit(T * state) = 0;
 	};
 }
+
 #endif

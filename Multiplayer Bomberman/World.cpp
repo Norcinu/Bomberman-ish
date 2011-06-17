@@ -10,6 +10,7 @@
 #include "maths.h"
 #include "Messenger.h"
 #include "EntitySystem.h"
+#include "BotStates.h"
 
 #include <algorithm>
 #include <fstream>
@@ -17,6 +18,8 @@
 
 EntitySystem entity_system;
 Entity game_entities[MAX_PLAYERS];
+
+int id = 0; 
 
 World::World(void) : game_timer(new Timer), current_level(nullptr), update_delta(0.0), tick_rate(50)
 {
@@ -62,10 +65,10 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
 	if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\sprite.spr")))
 		return false;
 
+	AddPlayer(gid1, false);
 	AddPlayer(gid1);
-	//AddPlayer(gid1);
-	//AddPlayer(gid1);
-	//AddPlayer(gid1);
+	AddPlayer(gid1);
+	AddPlayer(gid1);
 	
 	if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\bomb.spr")))
 		return false;
@@ -143,10 +146,17 @@ void World::Action(const int id)
 	// explosions go 4 up, down, left and right unless they hit something.
 		//entities[id]->DropBomb(); // not sure this is needed.
 
-	//itor = std::find_first_of(bomb_list.begin(), bomb_list.end(), isActive);
+	/*auto itor = std::find_first_of(bomb_list.begin(), bomb_list.end(), [](BombEntity* ent) -> bool {
+		return ent->GetActive();
+	});*/
 	// place at parent position.
 	// tick for a few seconds.
 	// explode.
+
+	/*auto itor = std::find(bomb_list.begin(), bomb_list.end(), [](BombEntity *bomb) -> bool 
+	{
+		return bomb->GetActive() == true;
+	});*/
 }
 
 void World::Update()
@@ -174,6 +184,10 @@ void World::Update()
 		}
 	}
 
+	MyFSM *st=new MyFSM;
+	st->state_machine = new entityFSM::StateMachine<Entity>(&game_entities[1]);
+
+	//st->state_machine.ChangeState(entityFSM::State<&game_entities[1]>);
 	//Position2D *pos=entity_system[0].getAs<Position2D>();
 }
 
@@ -184,22 +198,38 @@ void World::Render(Visualisation* vis) const
 	current_level->Render(vis);
 	
 	// draw active bombs
-	for (const_bomb_itor it=bomb_list.begin(); it != bomb_list.end(); ++it)
+	/*for (const_bomb_itor it=bomb_list.begin(); it != bomb_list.end(); ++it)
 	{
 		if ((*it)->GetActive())
 		{
 			(*it)->Render(delta, vis);
 		}
 	}
-	
+	*/
+	std::for_each(bomb_list.begin(), bomb_list.end(), [&delta, &vis](BombEntity *bomb) -> void 
+	{
+		if (bomb->GetActive()) 
+		{ 
+			bomb->Render(delta, vis); 
+		}
+	});
+
 	// draw active players
-	for (const_ent_itor it=entities.begin(); it != entities.end(); ++it)
+	std::for_each(entities.begin(), entities.end(), [&delta, &vis](BaseEntity *ent) -> void
+	{
+		if (ent->GetActive())
+		{
+			ent->Render(delta, vis);
+		}
+	});
+
+	/*for (const_ent_itor it=entities.begin(); it != entities.end(); ++it)
 	{
 		if ((*it)->GetActive())
 		{
 			(*it)->Render(delta, vis);
 		}
-	}
+	}*/
 
 	vis->EndScene();
 }
@@ -234,7 +264,7 @@ math::Vector2& World::FindFirstSpawn() const
 	return (*itor)->position;
 }
 
-void World::AddPlayer(const int id)
+void World::AddPlayer(const int id, bool is_bot)
 {
 	EntityImpl_t temp;
 	temp.graphic_id = id;
@@ -251,35 +281,33 @@ void World::AddPlayer(const int id)
 	
 	///----------- NEW ENTITY SYSTEM
 	// Components used by every entity.
-	for (int i = 0; i < MAX_PLAYERS; ++i)
-	{
-		Position2D *position = new Position2D;
-		Drawable *drawable = new Drawable;
-		Collision *collision = new Collision;
+	static int index = 0;
+	Position2D *position = new Position2D;
+	Drawable *drawable = new Drawable;
+	Collision *collision = new Collision;
 
-		entity_system.AddComponent(&game_entities[i], position);
-		entity_system.AddComponent(&game_entities[i], drawable);
-		entity_system.AddComponent(&game_entities[i], collision);
-	}
+	entity_system.AddComponent(&game_entities[index], position);
+	entity_system.AddComponent(&game_entities[index], drawable);
+	entity_system.AddComponent(&game_entities[index], collision);
 
 	// Components for non-players entities.
 	// assume player is always entity 0.
-	for(int i=1; i < MAX_PLAYERS; ++i)
+	if (is_bot)
 	{
 		MyFSM *fsm = new MyFSM;
 		Pathfinder *pf = new Pathfinder;
 		
-		entity_system.AddComponent(&game_entities[i], fsm);
-		entity_system.AddComponent(&game_entities[i], pf);
-	}
-
+		entity_system.AddComponent(&game_entities[index], fsm);
+		entity_system.AddComponent(&game_entities[index], pf);
+	} 
+	++index;
 }
 
 void World::FreeSpawnPoint(const math::Vector2& position)
 {
 	//std::vector<SpawnPoint_t*>::const_iterator itor;
 	//itor = std::find_if(spawns.begin(), spawns.end(), boost::bind(&SpawnPoint_t::ComparePosition,_1, position) == true);
-	auto itor = std::find_if(spawns.begin(), spawns.end(), [&](SpawnPoint_t* sp) -> bool { 
+	auto itor = std::find_if(spawns.begin(), spawns.end(), [position](SpawnPoint_t* sp) -> bool { 
 		std::cout << "Testing if position is free " << sp->position << std::endl;
 		return sp->position == position; 
 	});

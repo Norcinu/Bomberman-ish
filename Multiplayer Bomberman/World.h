@@ -37,7 +37,7 @@ public:
 
 	void Move(const int id, const math::Vector2& direction);
 	void Action(const int id);
-	void AddPlayer(const int id);
+	void AddPlayer(const int id, bool is_bot = true);
 	void Update();
 	void Render(Visualisation * vis) const;
 	void ParseMessage(const EventMessage_t& msg);

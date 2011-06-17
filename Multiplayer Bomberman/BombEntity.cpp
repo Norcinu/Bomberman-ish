@@ -12,7 +12,7 @@ BombEntity::BombEntity(void)
 BombEntity::BombEntity(const EntityImpl_t& ei)
 {
 	impl = new EntityImpl_t(ei);
-	timer = new Timer;
+	//timer = new Timer;
 }
 
 BombEntity::~BombEntity(void)
@@ -37,9 +37,14 @@ void BombEntity::Update()
 	static double old_time = 0;
 	double time_now = timer->Seconds();
 	
+	////static int i = 0;
+	//if (impl->active /*&& i == 0*/)
+	//	timer = new Timer;
+
 	if (time_now-old_time > 5.0)
 		impl->active=false;
 		// draw explosion
+
 }
 
 void BombEntity::Render(const double dt, Visualisation * vis)

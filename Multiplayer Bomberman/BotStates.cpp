@@ -1,5 +1,5 @@
 #include "BotStates.h"
-#include "BotEntity.h"
+//#include "BotEntity.h"
 
 namespace entityFSM
 {
@@ -17,15 +17,15 @@ namespace entityFSM
 		return &instance;
 	}
 
-	void WanderState::Enter(BotEntity * owner)
+	void WanderState::Enter(Entity * owner)
 	{
 	}
 
-	void WanderState::Execute(BotEntity * owner)
+	void WanderState::Execute(Entity * owner)
 	{
 	}
 
-	void WanderState::Exit(BotEntity * owner)
+	void WanderState::Exit(Entity * owner)
 	{
 	}
 
@@ -45,15 +45,15 @@ namespace entityFSM
 		return &instance;
 	}
 
-	void IdleState::Enter(BotEntity * owner)
+	void IdleState::Enter(Entity * owner)
 	{
 	}
 
-	void IdleState::Execute(BotEntity * owner)
+	void IdleState::Execute(Entity * owner)
 	{
 	}
 
-	void IdleState::Exit(BotEntity * owner)
+	void IdleState::Exit(Entity * owner)
 	{
 	}
 }

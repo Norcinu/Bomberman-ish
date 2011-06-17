@@ -2,20 +2,19 @@
 #define PLAYERSTATES_H
 
 #include "State.h"
-
-class BotEntity;
+#include "EntitySystem.h"
 
 namespace entityFSM
 {
-	class WanderState : public entityFSM::State<BotEntity>
+	class WanderState : public entityFSM::State<Entity>
 	{
 	public:
 		~WanderState(void);
 
 		static WanderState * GetInstance();
-		void Enter(BotEntity * owner);
-		void Execute(BotEntity * owner);
-		void Exit(BotEntity * owner);
+		void Enter(Entity * owner);
+		void Execute(Entity * owner);
+		void Exit(Entity * owner);
 	
 	private:
 		WanderState(void);
@@ -23,15 +22,15 @@ namespace entityFSM
 		WanderState& operator=(const WanderState& rhs);
 	};
 
-	class IdleState : public entityFSM::State<BotEntity>
+	class IdleState : public entityFSM::State<Entity>
 	{
 	public:
 		~IdleState();
 
 		static IdleState * GetInstance();
-		void Enter(BotEntity * owner);
-		void Execute(BotEntity * owner);
-		void Exit(BotEntity * owner);
+		void Enter(Entity * owner);
+		void Execute(Entity * owner);
+		void Exit(Entity * owner);
 
 	private:
 		IdleState();

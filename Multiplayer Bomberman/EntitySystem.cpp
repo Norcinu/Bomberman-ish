@@ -1,11 +1,11 @@
 #include "EntitySystem.h"
 
+// Had to move these here because 
+// BotStates.h was whining about objects already being declared.
 
-EntitySystem::EntitySystem(void)
+EntitySystem *Entity::entity_system = 0;
+
+Entity::Entity() 
 {
 }
 
-
-EntitySystem::~EntitySystem(void)
-{
-}

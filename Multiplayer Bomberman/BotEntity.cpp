@@ -6,8 +6,8 @@
 
 BotEntity::BotEntity(void)
 {
-	state_machine = new entityFSM::StateMachine<BotEntity>(this);
-	state_machine->ChangeState(entityFSM::WanderState::GetInstance());
+	/*state_machine = new entityFSM::StateMachine<BotEntity>(this);
+	state_machine->ChangeState(entityFSM::WanderState::GetInstance());*/
 }
 
 

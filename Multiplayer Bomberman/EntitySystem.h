@@ -23,7 +23,7 @@ struct Entity
 	std::map<FamilyId, Component*> m_components;
 };
 
-EntitySystem *Entity::entity_system = 0;
+//EntitySystem *Entity::entity_system = 0;
 
 struct EntitySystem 
 {
@@ -65,15 +65,17 @@ protected:
    std::multimap<FamilyId, Entity*> m_componentStore;
 };
 
-Entity::Entity() 
-{
-}
+
+//Entity::Entity() 
+//{
+//}
 
 template<typename Type> 
 Type* Entity::GetAs() 
 {
    return entity_system->GetComponent<Type>(this);
 }
+
 
 
 #include "StateMachine.h"
@@ -99,14 +101,16 @@ struct EntityExplosion : public Component
 struct MyFSM : public Component
 {
 	static const FamilyId familyId = 2;
-	class FSM : public entityFSM::StateMachine<Entity*>
-	{
-	};
+	entityFSM::StateMachine<Entity> *state_machine;	
 };
 
 struct Collision : public Component
 {
 	static const FamilyId familyId = 3;
+	int health;
+	int damage_to_give;
+	Collision() : health(100), damage_to_give(5) {}
+	Collision(int dmg) : health(100), damage_to_give(dmg) {}
 };
 
 struct Drawable : public Component
