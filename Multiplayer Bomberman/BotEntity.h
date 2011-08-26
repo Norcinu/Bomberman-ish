@@ -1,7 +1,7 @@
 #ifndef BOTENTITY_H
 #define BOTENTITY_H
 
-#include "baseentity.h"
+#include "BaseEntity.h"
 #include "StateMachine.h"
 
 //class entityFSM::StateMachine<BotEntity>;

@@ -1,12 +1,12 @@
 #include "BitmapFont.h"
 #include "Sprite.h"
 
-BitmapFont::BitmapFont(void) : bitmap(nullptr)
+BitmapFont::BitmapFont(void) : bitmap(NULL)
 {
 	chars.reserve(256);
 }
 
-BitmapFont::BitmapFont(SDL_Surface * surface) : bitmap(nullptr)
+BitmapFont::BitmapFont(SDL_Surface * surface) : bitmap(NULL)
 {
 	chars.reserve(256);
 }
@@ -23,7 +23,7 @@ bool BitmapFont::Initialise(const std::string& filename)
 		//return false;
 
 	bitmap = new Sprite;
-	if (bitmap == nullptr)
+	if (bitmap == NULL)
 		return false;
 
 	if (!bitmap->Load(filename))
@@ -191,7 +191,7 @@ void BitmapFont::DrawString(int x, int y, std::string& msg, SDL_Surface * surfac
     int X = x, Y = y;
 
     //If the font has been built
-    if( bitmap != nullptr )
+    if( bitmap != NULL )
     {
         //Go through the text
         for( int show = 0; msg[ show ] != '\0'; show++ )

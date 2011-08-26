@@ -2,7 +2,7 @@
 #define TIMER_H
 
 // maybe re-write this using boost or in some other cross-platform way.
-
+#ifdef WIN32_BUILD
 #define WIN32_LEAN_AND_MEAN
 #define VC_EXTRALEAN
 
@@ -36,5 +36,36 @@ private:
 	double m_frequency;
 	unsigned long long m_baseTime;
 };
+#else 
+    #include <sys/time.h>
+
+    class Timer 
+    {
+	public:
+		Timer()
+		{
+		}
+
+		~Timer()
+		{
+		}
+
+		void Reset()
+		{
+		}
+
+		double Seconds()
+		{
+			return 1 * 1 * m_frequency;
+		}
+
+		double Milliseconds() { return Seconds() * 1000.0; }
+
+		private:
+			double m_frequency;
+			unsigned long long m_baseTime;
+    };
+
+#endif // ifdef WIN32 ELSE 
 
 #endif

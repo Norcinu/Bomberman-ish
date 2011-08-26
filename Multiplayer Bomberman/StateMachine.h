@@ -10,8 +10,8 @@ namespace entityFSM
 	class StateMachine
 	{
 	public:
-		StateMachine(T * owner_) : owner(owner_), current_state(nullptr), previous_state(nullptr),
-			global_state(nullptr) {}
+		StateMachine(T * owner_) : owner(owner_), current_state(NULL), previous_state(NULL),
+			global_state(NULL) {}
 
 		virtual ~StateMachine(void)	{}
 

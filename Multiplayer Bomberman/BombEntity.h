@@ -1,7 +1,7 @@
 #ifndef BOMBENTITY_H
 #define BOMBENTITY_H
 
-#include "baseentity.h"
+#include "BaseEntity.h"
 
 class Timer;
 

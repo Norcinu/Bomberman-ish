@@ -1,7 +1,7 @@
 #ifndef BITMAPFONT_H
 #define BITMAPFONT_H
 
-#include <SDL.h>
+#include <SDL/SDL.h>
 #include <string>
 #include <vector>
 
