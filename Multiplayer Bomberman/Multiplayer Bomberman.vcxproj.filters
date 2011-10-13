@@ -88,15 +88,13 @@
     <ClCompile Include="Messenger.cpp">
       <Filter>Messages</Filter>
     </ClCompile>
-    <ClCompile Include="BotEntity.cpp">
-      <Filter>Game\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="BotStates.cpp">
       <Filter>Game\Entities\Entity States</Filter>
     </ClCompile>
     <ClCompile Include="SoundManager.cpp">
       <Filter>Sound</Filter>
     </ClCompile>
+    <ClCompile Include="EntitySystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar.h">
@@ -180,9 +178,6 @@
     <ClInclude Include="State.h">
       <Filter>Game\Entities\Entity States</Filter>
     </ClInclude>
-    <ClInclude Include="BotEntity.h">
-      <Filter>Game\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="BotStates.h">
       <Filter>Game\Entities\Entity States</Filter>
     </ClInclude>
@@ -192,5 +187,6 @@
     <ClInclude Include="SoundManager.h">
       <Filter>Sound</Filter>
     </ClInclude>
+    <ClInclude Include="StringUtils.h" />
   </ItemGroup>
 </Project>

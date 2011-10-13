@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include <fmod.hpp>
+//#include <fmod.hpp>
 
 class SoundManager
 {
@@ -26,23 +26,23 @@ public:
 private:
 	struct sound_t
 	{
-		FMOD::Sound * data;
+		//FMOD::Sound * data;
 		unsigned int state_flags;
 	};
 
 private:
 	std::vector<sound_t*> sounds;
-	FMOD::System * system;
-	FMOD_RESULT result;
+	//FMOD::System * system;
+	//FMOD_RESULT result;
 	unsigned int version;
 	int numdrivers;
-	FMOD_SPEAKERMODE speakermode;
-	FMOD_CAPS caps;
+	//FMOD_SPEAKERMODE speakermode;
+	//FMOD_CAPS caps;
 	char name[256];
 
 	typedef std::vector<sound_t*>::iterator sound_itor;
 };
 
-void ERRCHECK(FMOD_RESULT result_);
+//void ERRCHECK(FMOD_RESULT result_);
 
 #endif

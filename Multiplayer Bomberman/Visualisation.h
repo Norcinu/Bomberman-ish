@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <cassert>
-#include <SDL/SDL.h>
+#include <SDL.h>
 #include "maths.h"
 #include "Rectangle.h"
 
