@@ -94,7 +94,9 @@
     <ClCompile Include="SoundManager.cpp">
       <Filter>Sound</Filter>
     </ClCompile>
-    <ClCompile Include="EntitySystem.cpp" />
+    <ClCompile Include="EntitySystem.cpp">
+      <Filter>Game\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar.h">
@@ -187,6 +189,8 @@
     <ClInclude Include="SoundManager.h">
       <Filter>Sound</Filter>
     </ClInclude>
-    <ClInclude Include="StringUtils.h" />
+    <ClInclude Include="StringUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
