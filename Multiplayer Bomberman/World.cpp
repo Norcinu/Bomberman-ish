@@ -169,8 +169,8 @@ void World::Update()
 
 	if (game_timer->Milliseconds() - update_delta > tick_rate)
 	{
-		std::for_each(entities.begin(), entities.end(), [](BaseEntity* ent) { ent->Update(); });
-		std::for_each(bomb_list.begin(), bomb_list.end(), [](BombEntity *b) { b->Update(); });
+		std::for_each(entities.begin(), entities.end(), [](BaseEntity * ent) { ent->Update(); });
+		std::for_each(bomb_list.begin(), bomb_list.end(), [](BombEntity * b) { b->Update(); });
 		/*std::for_each(entities.begin(), entities.end(), std::mem_fun(&BaseEntity::Update));
 		std::for_each(bomb_list.begin(), bomb_list.end(), std::mem_fun(&BombEntity::Update));*/
 	}
@@ -198,14 +198,6 @@ void World::Render(Visualisation* vis) const
 	current_level->Render(vis);
 	
 	// draw active bombs
-	/*for (const_bomb_itor it=bomb_list.begin(); it != bomb_list.end(); ++it)
-	{
-		if ((*it)->GetActive())
-		{
-			(*it)->Render(delta, vis);
-		}
-	}
-	*/
 	std::for_each(bomb_list.begin(), bomb_list.end(), [&delta, &vis](BombEntity *bomb) -> void 
 	{
 		if (bomb->GetActive()) 
@@ -222,14 +214,6 @@ void World::Render(Visualisation* vis) const
 			ent->Render(delta, vis);
 		}
 	});
-
-	/*for (const_ent_itor it=entities.begin(); it != entities.end(); ++it)
-	{
-		if ((*it)->GetActive())
-		{
-			(*it)->Render(delta, vis);
-		}
-	}*/
 
 	vis->EndScene();
 }
@@ -253,8 +237,6 @@ bool World::ChangeLevel(const std::string& level_name)
 
 math::Vector2& World::FindFirstSpawn() const
 {
-	//std::vector<SpawnPoint_t*>::const_iterator itor;
-	//itor = std::find_if(spawns.begin(), spawns.end(), boost::bind(&SpawnPoint_t::is_available,_1)==true);
 	auto itor = std::find_if(spawns.begin(), spawns.end(), [](SpawnPoint_t* sp) -> bool { 
 		std::cout << "Testing if position is free " << sp->position << std::endl;
 		return sp->is_available; 
@@ -305,12 +287,13 @@ void World::AddPlayer(const int id, bool is_bot)
 
 void World::FreeSpawnPoint(const math::Vector2& position)
 {
-	//std::vector<SpawnPoint_t*>::const_iterator itor;
-	//itor = std::find_if(spawns.begin(), spawns.end(), boost::bind(&SpawnPoint_t::ComparePosition,_1, position) == true);
-	auto itor = std::find_if(spawns.begin(), spawns.end(), [position](SpawnPoint_t* sp) -> bool { 
+	auto itor = std::find_if(spawns.begin(), spawns.end(), [&position](SpawnPoint_t* sp) -> bool { 
+#ifdef _DEBUG
 		std::cout << "Testing if position is free " << sp->position << std::endl;
+#endif
 		return sp->position == position; 
 	});
+
 	(*itor)->is_available = true;
 }
 

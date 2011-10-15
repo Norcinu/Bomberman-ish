@@ -14,20 +14,22 @@
 
 int main(int argc, char *argv[])
 {
-	Engine *engine = new Engine;
-	if (!engine->Initialise())
+	//Engine *engine = new Engine;
+	//std::shared_ptr<Engine> engine(new Engine);
+	Engine engine;
+	if (!engine.Initialise())
 		return -1;
 
-	engine->ChangeState(SplashState::GetInstance());
+	engine.ChangeState(SplashState::GetInstance());
 
-	while (engine->IsRunning())
+	while (engine.IsRunning())
 	{
-		engine->HandleEvents();
-		engine->Update();
-		engine->Render();
+		engine.HandleEvents();
+		engine.Update();
+		engine.Render();
 	}
 
-	delete engine;
+	//delete engine;
 	return 0;
 }
 

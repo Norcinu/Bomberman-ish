@@ -15,7 +15,7 @@
 
 Visualisation::Visualisation(void)
 {
-	screen = NULL;
+	screen = nullptr;
 	screen_width  = 512;
 	screen_height = 512;
 	screen_depth  = 24;
@@ -80,7 +80,7 @@ bool Visualisation::Initialise(const int height, const int width, bool fscreen)
 		SDL_HWSURFACE | SDL_DOUBLEBUF | SDL_ASYNCBLIT | SDL_FULLSCREEN);
 #endif 
 
-	SDL_WM_SetCaption("Steven Gleed - Bomberman Client 2010 - 2011", NULL);
+	SDL_WM_SetCaption("Steven Gleed - Bomberman Client 2010 - 2011", nullptr);
 	
 	return true;
 }
@@ -114,14 +114,14 @@ void Visualisation::ClearScreen()
 #ifdef USING_OPENGL
 	glClear(GL_COLOR_BUFFER_BIT);
 #else
-	SDL_FillRect(SDL_GetVideoSurface(), NULL, SDL_MapRGB(SDL_GetVideoSurface()->format, 0,0,0));
+	SDL_FillRect(SDL_GetVideoSurface(), nullptr, SDL_MapRGB(SDL_GetVideoSurface()->format, 0,0,0));
 #endif
 	
 }
 
 void Visualisation::ClearScreen( Uint32 colour )
 {
-	SDL_FillRect(screen, NULL, colour);
+	SDL_FillRect(screen, nullptr, colour);
 }
 
 void Visualisation::CalculateFPS()

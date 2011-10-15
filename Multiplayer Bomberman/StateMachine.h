@@ -10,8 +10,8 @@ namespace entityFSM
 	class StateMachine
 	{
 	public:
-		StateMachine(T * owner_) : owner(owner_), current_state(NULL), previous_state(NULL),
-			global_state(NULL) {}
+		StateMachine(T * owner_) : owner(owner_), current_state(nullptr), previous_state(nullptr),
+			global_state(nullptr) {}
 
 		virtual ~StateMachine(void)	{}
 
@@ -35,7 +35,7 @@ namespace entityFSM
 		void ChangeState(State<T> * new_state)
 		{
 			assert(new_state && 
-           "<StateMachine::ChangeState>: trying to change to NULL state");
+           "<StateMachine::ChangeState>: trying to change to nullptr state");
 
 			previous_state = current_state;
 			current_state->Exit(owner);

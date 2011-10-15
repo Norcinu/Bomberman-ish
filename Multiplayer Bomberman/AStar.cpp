@@ -11,7 +11,7 @@ bool compareFValues( const node_t& n1, const node_t& n2 )
 	return ((n1.g_score + n1.h_score) < (n2.g_score + n2.h_score));
 }
 
-AStar::AStar() : level_copy(NULL)
+AStar::AStar() : level_copy(nullptr)
 {
 }
 

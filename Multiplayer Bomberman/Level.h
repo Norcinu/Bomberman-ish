@@ -25,6 +25,15 @@ struct tile_t
 	}
 };
 
+template <class Tile>
+struct TileComparison_t
+{
+	bool operator()(const Tile& t1, const Tile& t2)
+	{
+		return t1.pos == t2.pos;
+	}
+};
+
 enum TILE_STATES
 {
 	BRICK = 0x01,

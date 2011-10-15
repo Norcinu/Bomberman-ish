@@ -1,0 +1,11 @@
+************
+*  README  *
+************
+
+Author: Steven Gleed.
+
+This is a little 2D demo fairly similar to bomberman. Just made for fun and learning really.
+
+The demo uses Boost, SDL and FMOD libraries. 
+
+It is written using Visual Studio 2010 I tried compiling my code in gcc(version 4.5.2) but it was quite broken and was really an after thought and I have no real intention of making it gcc compatible.

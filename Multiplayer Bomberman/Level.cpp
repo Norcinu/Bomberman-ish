@@ -286,7 +286,6 @@ math::Vector2 Level::GetRandomWalkableTile()
 
 void Level::GetSpawnPoints( std::vector<SpawnPoint_t*>& sp )
 {
-	//std::copy(spawn_points.begin(), spawn_points.end(), sp);
 	if (!spawn_points.empty())
 		sp = spawn_points;
 }
