@@ -292,8 +292,12 @@ void Level::GetSpawnPoints( std::vector<SpawnPoint_t*>& sp )
 
 void Level::SetTileState( const math::Vector2& position, Uint32 new_states )
 {
-	tile_itor it = tiles.begin();
-	it = std::find_if(tiles.begin(), tiles.end(), boost::bind(&tile_t::PositionPredicate, _1, position) == true);
+	//tile_itor it = tiles.begin();
+	auto it = std::find_if(tiles.begin(), tiles.end(), [&position](tile_t& t) -> bool 
+	{   
+		return t.pos == position;
+	});
+		//boost::bind(&tile_t::PositionPredicate, _1, position) == true);
 	if (it != tiles.end())
 		(*it).tile_state = new_states;
 }

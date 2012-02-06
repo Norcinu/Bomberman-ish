@@ -30,7 +30,7 @@ public:
 	
 	void ClearGraphicSet();
 	void DrawSprite(const int id, const math::Vector2& frame, /*const*/ math::Vector2& pos);
-	void DrawLine(math::Vector2& p1, math::Vector2& p2, Uint32 colour = 0);
+	void DrawLine(math::Vector2& p1, math::Vector2& p2, Uint32 colour = 128);
 	void FillRectangle(const rec::Rectangle& p);
 
 	void BeginScene();

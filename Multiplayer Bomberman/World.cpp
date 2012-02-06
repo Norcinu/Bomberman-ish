@@ -9,15 +9,15 @@
 #include "Explosion.h"
 #include "maths.h"
 #include "Messenger.h"
-#include "EntitySystem.h"
+//#include "EntitySystem.h"
 #include "BotStates.h"
 
 #include <algorithm>
 #include <fstream>
 #include <boost\bind.hpp>
 
-EntitySystem entity_system;
-Entity game_entities[MAX_PLAYERS];
+//EntitySystem entity_system;
+//Entity game_entities[MAX_PLAYERS];
 
 int id = 0; 
 
@@ -184,8 +184,8 @@ void World::Update()
 		}
 	}
 
-	MyFSM *st=new MyFSM;
-	st->state_machine = new entityFSM::StateMachine<Entity>(&game_entities[1]);
+	/*MyFSM *st=new MyFSM;
+	st->state_machine = new entityFSM::StateMachine<Entity>(&game_entities[1]);*/
 
 	//st->state_machine.ChangeState(entityFSM::State<&game_entities[1]>);
 	//Position2D *pos=entity_system[0].getAs<Position2D>();
@@ -263,26 +263,26 @@ void World::AddPlayer(const int id, bool is_bot)
 	
 	///----------- NEW ENTITY SYSTEM
 	// Components used by every entity.
-	static int index = 0;
-	Position2D *position = new Position2D;
-	Drawable *drawable = new Drawable;
-	Collision *collision = new Collision;
+	//static int index = 0;
+	//Position2D *position = new Position2D;
+	//Drawable *drawable = new Drawable;
+	//Collision *collision = new Collision;
 
-	entity_system.AddComponent(&game_entities[index], position);
-	entity_system.AddComponent(&game_entities[index], drawable);
-	entity_system.AddComponent(&game_entities[index], collision);
+	//entity_system.AddComponent(&game_entities[index], position);
+	//entity_system.AddComponent(&game_entities[index], drawable);
+	//entity_system.AddComponent(&game_entities[index], collision);
 
-	// Components for non-players entities.
-	// assume player is always entity 0.
-	if (is_bot)
-	{
-		MyFSM *fsm = new MyFSM;
-		Pathfinder *pf = new Pathfinder;
-		
-		entity_system.AddComponent(&game_entities[index], fsm);
-		entity_system.AddComponent(&game_entities[index], pf);
-	} 
-	++index;
+	//// Components for non-players entities.
+	//// assume player is always entity 0.
+	//if (is_bot)
+	//{
+	//	MyFSM *fsm = new MyFSM;
+	//	Pathfinder *pf = new Pathfinder;
+	//	
+	//	entity_system.AddComponent(&game_entities[index], fsm);
+	//	entity_system.AddComponent(&game_entities[index], pf);
+	//} 
+	//++index;
 }
 
 void World::FreeSpawnPoint(const math::Vector2& position)

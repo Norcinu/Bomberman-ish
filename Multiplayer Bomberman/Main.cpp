@@ -55,11 +55,10 @@ int main(int argc, char *argv[])
 //		//font->Initialise("data\\bitmaps\\verdana.bmp");
 //			
 //		Events *event_manager = new Events;
-//		
 //		//event_manager->SetKeyMap();
 //		while (event_manager->Running())
 //		{
-//			event_manager->Update(world);
+//			event_manager->Update(/*world*/);
 //			world->Update();
 //			world->Render(vis);
 //			//font->DrawString(1,1,std::string("Hello, World!"), vis->GetScreenSurface());

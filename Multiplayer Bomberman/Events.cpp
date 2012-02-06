@@ -10,6 +10,7 @@
 
 Events::Events(void) : running(true)
 {	
+    // read in key config from file.
 	keymapping.insert(std::make_pair(SDLK_w, EVT_FORWARD));
 	keymapping.insert(std::make_pair(SDLK_s, EVT_BACKWARD));
 	keymapping.insert(std::make_pair(SDLK_a, EVT_LEFT));

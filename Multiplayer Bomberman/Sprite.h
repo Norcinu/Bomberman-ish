@@ -19,7 +19,7 @@ public:
 	SDL_Rect SpriteRectangle() const { return rec; }
 	SDL_Surface * RawSprite() const { return sprite; }
 
-	Uint32 get_pixel32(int x, int y);
+	Uint32 GetPixel32(int x, int y);
 
 	int GetWidth() const { return sprite->clip_rect.w; }
 	int GetHeight() const { return sprite->clip_rect.h; }

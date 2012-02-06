@@ -40,8 +40,12 @@ void AStar::Search( std::vector<node_t>& path, const math::Vector2& position, co
 	bool found = false;
 	while (!found)
 	{
-		std::sort(open_list.begin(), open_list.end(), compareFValues);
-		
+		//std::sort(open_list.begin(), open_list.end(), compareFValues);
+		std::sort(open_list.begin(), open_list.end(), [](const node_t& t1, const node_t& t2 ) -> bool
+		{
+			return t1.FValue() == t1.FValue();
+		});
+
 		if (open_list[0].position == goal)
 		{
 			closed_list.push_back(open_list[0]);

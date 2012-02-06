@@ -94,8 +94,8 @@
     <ClCompile Include="SoundManager.cpp">
       <Filter>Sound</Filter>
     </ClCompile>
-    <ClCompile Include="EntitySystem.cpp">
-      <Filter>Game\Entities</Filter>
+    <ClCompile Include="TextManager.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -183,14 +183,23 @@
     <ClInclude Include="BotStates.h">
       <Filter>Game\Entities\Entity States</Filter>
     </ClInclude>
-    <ClInclude Include="EntitySystem.h">
-      <Filter>Game\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="SoundManager.h">
       <Filter>Sound</Filter>
     </ClInclude>
     <ClInclude Include="StringUtils.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Components.h">
+      <Filter>Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerStats.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="TextManager.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

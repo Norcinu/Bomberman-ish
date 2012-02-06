@@ -18,7 +18,7 @@ public:
 	void DoAnimation();
 
 private:
-	Timer *timer;
+	Timer *timer; // contain  a list of explosions?
 };
 
 #endif

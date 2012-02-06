@@ -165,12 +165,13 @@ void Sprite::Render( SDL_Surface * screen, const math::Vector2& frame, /*const*/
 		glTexCoord2i(0,1);
 		glVertex2i(source.x, source.y+frame_height);
 	glEnd();
+    glLoadIdentity();
 #endif
 #pragma endregion OPENGL_RENDERING
 
 }
 
-Uint32 Sprite::get_pixel32(int x, int y)
+Uint32 Sprite::GetPixel32(int x, int y)
 {
     Uint32 *pixels = (Uint32 *)sprite->pixels;
     return pixels[ (y * sprite->w)  + x ];

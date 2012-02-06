@@ -100,8 +100,8 @@ bool Visualisation::AddSprite( int * id, const std::string& file )
 	
 	/*int colour_key = SDL_MapRGB(screen->format, 0, 255, 255);
 	SDL_SetColorKey(spr->RawSprite(), SDL_SRCCOLORKEY | SDL_RLEACCEL, colour_key);*/
-	int colorkey = SDL_MapRGB(screen->format, 255, 0, 255);
-	SDL_SetColorKey(spr->RawSprite(), SDL_SRCCOLORKEY | SDL_RLEACCEL, colorkey);
+	int colour_key = SDL_MapRGB(screen->format, 255, 0, 255);
+	SDL_SetColorKey(spr->RawSprite(), SDL_SRCCOLORKEY | SDL_RLEACCEL, colour_key);
 
 	printf("sprite added ok. ID = %d\n", *id);
 	return true;
@@ -113,6 +113,7 @@ void Visualisation::ClearScreen()
 
 #ifdef USING_OPENGL
 	glClear(GL_COLOR_BUFFER_BIT);
+    //glClearColor(128,128,128,0);
 #else
 	SDL_FillRect(SDL_GetVideoSurface(), nullptr, SDL_MapRGB(SDL_GetVideoSurface()->format, 0,0,0));
 #endif
@@ -154,9 +155,25 @@ void Visualisation::BeginScene()
 {
 #ifdef USING_OPENGL	
 	glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
+    glClearColor(0,0,0,0);
 	glLoadIdentity();
+
+    //testing.
+    glBegin(GL_QUADS);
+        glColor4f(0.5f,.7f,1.f,0.0f);
+        glVertex3f( 0,            0,             0 );
+        glVertex3f(128, 0,             0 );
+        glVertex3f( 128, 128, 0 );
+        glVertex3f( 0,            128, 0 );
+    glEnd();
+
+    glLoadIdentity();
 #else
 	ClearScreen(SDL_MapRGB(screen->format, 0,0,0)); 
+    //DrawLine(math::Vector2(1,1), math::Vector2(33,1));
+    //DrawLine(math::Vector2(1,33), math::Vector2(33,33));
+    //DrawLine(math::Vector2(1,1), math::Vector2(1,-33));
+    //DrawLine(math::Vector2(33,33), math::Vector2(33,1));
 #endif 
 }
 
@@ -170,12 +187,12 @@ void Visualisation::EndScene()
 	CalculateFPS();
 }
 
-void Visualisation::DrawSprite( const int id, const math::Vector2& frame, /*const */math::Vector2& pos )
+void Visualisation::DrawSprite( const int id, const math::Vector2& frame,math::Vector2& pos )
 {
 	sprites[id]->Render(screen, frame, pos);
 }
 
-void Visualisation::DrawLine( math::Vector2& p1, math::Vector2& p2, Uint32 colour /*= 0*/ )
+void Visualisation::DrawLine( math::Vector2& p1, math::Vector2& p2, Uint32 colour )
 {
 	if (colour != 0)
 		printf("colour is not 0\n");

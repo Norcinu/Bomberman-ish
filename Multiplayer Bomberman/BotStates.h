@@ -2,11 +2,11 @@
 #define PLAYERSTATES_H
 
 #include "State.h"
-#include "EntitySystem.h"
+//#include "EntitySystem.h"
 
 namespace entityFSM
 {
-	class WanderState : public entityFSM::State<Entity>
+	/*class WanderState : public entityFSM::State<Entity>
 	{
 	public:
 		~WanderState(void);
@@ -36,7 +36,7 @@ namespace entityFSM
 		IdleState();
 		IdleState(const IdleState& rhs);
 		IdleState& operator=(const IdleState& rhs);
-	};
+	};*/
 }
 
 #endif

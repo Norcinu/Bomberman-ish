@@ -74,7 +74,7 @@ bool BitmapFont::Initialise(const std::string& filename)
                     int pY = ( cellH * rows ) + pRow;
 
                     //If a non colorkey pixel is found
-                    if( bitmap->get_pixel32(pX, pY) != bg_colour )
+                    if( bitmap->GetPixel32(pX, pY) != bg_colour )
                     {
                         //Set the x offset
                         chars[ currentChar ].x = pX;
@@ -98,7 +98,7 @@ bool BitmapFont::Initialise(const std::string& filename)
                     int pY = ( cellH * rows ) + pRow_w;
 
                     //If a non colorkey pixel is found
-                    if( bitmap->get_pixel32(pX, pY) != bg_colour )
+                    if( bitmap->GetPixel32(pX, pY) != bg_colour )
                     {
                         //Set the width
                         chars[ currentChar ].w = ( pX - chars[ currentChar ].x ) + 1;
@@ -122,7 +122,7 @@ bool BitmapFont::Initialise(const std::string& filename)
                     int pY = ( cellH * rows ) + pRow;
 
                     //If a non colorkey pixel is found
-                    if( bitmap->get_pixel32(pX, pY) != bg_colour )
+                    if( bitmap->GetPixel32(pX, pY) != bg_colour )
                     {
                         //If new top is found
                         if( pRow < top )
@@ -151,7 +151,7 @@ bool BitmapFont::Initialise(const std::string& filename)
                         int pY = ( cellH * rows ) + pRow;
 
                         //If a non colorkey pixel is found
-                        if( bitmap->get_pixel32(pX, pY) != bg_colour )
+                        if( bitmap->GetPixel32(pX, pY) != bg_colour )
                         {
                             //Bottom of a is found
                             baseA = pRow;

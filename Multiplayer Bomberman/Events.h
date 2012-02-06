@@ -50,4 +50,53 @@ private:
 	boost::timer my_timer;
 };
 
+class InputManager
+{
+public:
+    InputManager();
+    ~InputManager();
+
+    void update();
+   
+    enum InputType { KEYBOARD = 1, MOUSE, CONTROLLER, AI };
+private:
+    // DEVICE TYPE. Register user or AI
+};
+
+class InputDeviceBase
+{
+public:
+    virtual void update() = 0;
+    virtual ~InputDeviceBase() {}
+
+   int entity_to_control;
+    
+    const int getRegisteredEntity() const { return entity_to_control; }
+    void setRegisteredEntity(const int val) { entity_to_control = val; }
+
+private:
+    InputDeviceBase() : entity_to_control(0) {}
+    
+};
+
+//class Keyboard : public InputDeviceBase
+//{
+//public:
+//    Keyboard() {}
+//    ~Keyboard() {}
+//
+//    void update() {}
+//
+//private:
+//};
+//
+//class Mouse : public InputDeviceBase
+//{
+//
+//};
+//
+//class Controller : public InputDeviceBase
+//{
+//
+//};
 #endif
