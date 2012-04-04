@@ -5,6 +5,8 @@
 #include "World.h"
 #include "Events.h"
 #include "PlayState.h"
+#include "MenuState.h"
+
 #include <string>
 
 SplashState SplashState::instance;
@@ -42,7 +44,7 @@ void SplashState::HandleEvent(Engine * eng)
 	//eng->GetEventManagerPtr()->Update(eng->GetWorldModelPtr());
 	eng->GetEventManagerPtr()->Update(eng->GetMessengerPtr());
 
-	if (change_state)
+    if (change_state) //eng->ChangeState(MenuState::GetInstance());
 		eng->ChangeState(PlayState::GetInstance());
 }
 

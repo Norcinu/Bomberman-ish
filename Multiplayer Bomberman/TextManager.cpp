@@ -21,6 +21,7 @@ TextManager::~TextManager(void)
 
 bool TextManager::Initialise( const std::string& font_file )
 {
+    TTF_Init();
     font = TTF_OpenFont(font_file.c_str(), font_size);
     
     if (font == nullptr)
@@ -35,7 +36,9 @@ bool TextManager::Initialise( const std::string& font_file )
 void TextManager::AddMessage( const std::string& msg, int x, int y )
 {
     TextInfo * info = new TextInfo(msg, x, y);
-   
+    info->font_colour.r = 0;
+    info->font_colour.g = 128;
+    info->font_colour.b = 0;
     if (!info) 
         std::cerr << "Error creating new text message : " << msg << std::endl;
     
@@ -54,6 +57,9 @@ void TextManager::Render(SDL_Surface * screen)
         text_area = TTF_RenderText_Shaded(font, (*it)->message.c_str(),  
             (*it)->font_colour, (*it)->background_colour);
     
+       /* text_area = TTF_RenderText_Blended(font, (*it)->message.c_str(),  
+            (*it)->font_colour);*/
+
         position.x = (*it)->position_x;
         position.y = (*it)->position_y;
 

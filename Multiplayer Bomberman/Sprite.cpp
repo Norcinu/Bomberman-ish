@@ -35,7 +35,9 @@ Sprite::~Sprite()
 		sprite = nullptr;
 	}
 
+#ifdef USING_OPENGL
 	glDeleteTextures(1, &texture);
+#endif
 }
 
 bool Sprite::Load( const std::string& filename )

@@ -9,4 +9,10 @@ struct PlayerStatsTracker_t
     int bombs_fired;
 };
 
+struct GameStatsTracker_t
+{
+    bool game_running;
+    int players_remaining;
+};
+
 #endif

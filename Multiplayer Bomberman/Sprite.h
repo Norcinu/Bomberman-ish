@@ -34,9 +34,11 @@ private:
 	int frame_width;
 	int frame_height;
 
+#ifdef USING_OPENGL
 	GLuint texture;
 	GLenum texture_format;
 	GLint  nOfColors;
+#endif
 };
 
 #endif

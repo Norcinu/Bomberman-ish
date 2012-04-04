@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <SDL_opengl.h>
+#include <cmath>
 
 #pragma warning(disable:4244)
 
@@ -189,7 +190,10 @@ void Visualisation::EndScene()
 
 void Visualisation::DrawSprite( const int id, const math::Vector2& frame,math::Vector2& pos )
 {
-	sprites[id]->Render(screen, frame, pos);
+    //math::Vector2 rotated_position;
+    //rotated_position.x = pos.x * std::cos(90.0f) - pos.y * std::sin(90.0f);
+    //rotated_position.y = pos.y * std::cos(90.0f) + pos.x * std::sin(90.0f);
+    sprites[id]->Render(screen, frame, pos);
 }
 
 void Visualisation::DrawLine( math::Vector2& p1, math::Vector2& p2, Uint32 colour )

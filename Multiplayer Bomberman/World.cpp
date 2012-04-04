@@ -132,7 +132,18 @@ void World::Action(const int id)
 {
 	if (CheckBounds(id))
 	{
-		for(size_t i = 0; i<bomb_list.size(); ++i)
+        auto result = std::find_if_not(bomb_list.begin(), bomb_list.end(), [](BombEntity *b){
+            return b->GetActive();
+        });
+
+        if (result != bomb_list.end()) 
+        {
+            (*result)->SetActive(true);
+            (*result)->SetSide(entities[id]->GetSide());
+            (*result)->SetPosition(entities[id]->GetPosition());
+        }
+
+		/*for(size_t i = 0; i<bomb_list.size(); ++i)
 		{
 			if (!bomb_list[i]->GetActive())
 			{
@@ -141,7 +152,7 @@ void World::Action(const int id)
 				bomb_list[i]->SetSide(entities[id]->GetSide());
 				break;
 			}
-		}
+		}*/
 	}
 	// explosions go 4 up, down, left and right unless they hit something.
 		//entities[id]->DropBomb(); // not sure this is needed.
@@ -195,7 +206,7 @@ void World::Render(Visualisation* vis) const
 {
 	double delta = (game_timer->Milliseconds() / update_delta) / tick_rate;
 	vis->BeginScene();
-	current_level->Render(vis);
+	//current_level->Render(vis);
 	
 	// draw active bombs
 	std::for_each(bomb_list.begin(), bomb_list.end(), [&delta, &vis](BombEntity *bomb) -> void 

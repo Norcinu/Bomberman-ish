@@ -97,6 +97,12 @@
     <ClCompile Include="TextManager.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="MenuState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar.h">
@@ -200,6 +206,18 @@
     </ClInclude>
     <ClInclude Include="TextManager.h">
       <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="FastDelegate\FastDelegate.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FastDelegate\FastDelegateBind.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

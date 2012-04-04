@@ -25,7 +25,7 @@ Events::Events(void) : running(true)
 	for (int i = 0; i < NUM_OF_KEYS-1; ++i)
 		key_table[i] = false;
 
-	SDL_EnableKeyRepeat(170,70);
+	//SDL_EnableKeyRepeat(170,70);
 	//SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 }
 
