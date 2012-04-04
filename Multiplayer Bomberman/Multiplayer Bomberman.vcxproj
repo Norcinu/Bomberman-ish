@@ -103,6 +103,7 @@
     <ClCompile Include="PlayerEntity.cpp" />
     <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="Profiler.cpp" />
+    <ClCompile Include="ResourceFactory.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="Profiler.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="ResourceFactory.h" />
     <ClInclude Include="SDL_Collide.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SplashState.h" />

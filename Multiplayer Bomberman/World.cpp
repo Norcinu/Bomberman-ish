@@ -21,7 +21,12 @@
 
 int id = 0; 
 
-World::World(void) : game_timer(new Timer), current_level(nullptr), update_delta(0.0), tick_rate(50)
+World::World(void) : 
+    game_timer(new Timer), 
+    current_level(nullptr), 
+    update_delta(0.0), 
+    tick_rate(50),
+    messages(new Messenger)
 {
 	entities.reserve(MAX_PLAYERS);
 	spawns.reserve(MAX_SPAWNPOINTS);
@@ -32,7 +37,11 @@ World::World(void) : game_timer(new Timer), current_level(nullptr), update_delta
 	//game_entities = new Entity[MAX_PLAYERS];
 }
 
-World::World(Messenger * msg) : game_timer(new Timer), current_level(nullptr), update_delta(0.0), tick_rate(50),
+World::World(Messenger * msg) : 
+    game_timer(new Timer), 
+    current_level(nullptr), 
+    update_delta(0.0), 
+    tick_rate(50),
 	messages(msg)
 {
 }

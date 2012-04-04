@@ -103,6 +103,9 @@
     <ClCompile Include="Logger.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceFactory.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AStar.h">
@@ -218,6 +221,9 @@
     </ClInclude>
     <ClInclude Include="Logger.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceFactory.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
