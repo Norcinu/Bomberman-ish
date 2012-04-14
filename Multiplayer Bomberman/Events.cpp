@@ -3,7 +3,7 @@
 #include "Messenger.h"
 #include "maths.h"
 #include <string>
-#include <boost\timer.hpp>
+#include <boost/timer.hpp>
 
 // need an input method for the bots.
 // and a better method than world->action(0) for the player.

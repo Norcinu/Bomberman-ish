@@ -11,7 +11,7 @@
 
 #include "Engine.h"
 #include "SplashState.h"
-#include "FastDelegate\FastDelegate.h"
+#include "FastDelegate/FastDelegate.h"
 #include "Logger.h"
 
 int main(int argc, char *argv[])

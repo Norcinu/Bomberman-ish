@@ -1,7 +1,7 @@
 #ifndef MENU_STATE_H
 #define MENU_STATE_H
 
-#include "basestate.h"
+#include "BaseState.h"
 
 class Engine;
 

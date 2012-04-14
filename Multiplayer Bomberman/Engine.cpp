@@ -5,7 +5,11 @@
 #include "World.h"
 #include "Messenger.h"
 
-Engine::Engine(void) : renderer(nullptr), event_manager(nullptr), world_model(nullptr), message_system(nullptr)
+Engine::Engine(void) : 
+	renderer(nullptr), 
+	event_manager(nullptr), 
+	world_model(nullptr), 
+	message_system(nullptr)
 {
 	states.reserve(4);
 }

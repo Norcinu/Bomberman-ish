@@ -6,8 +6,8 @@ template <class Policy>
 class ResourceFactory
 {
 public:
-    ResourceFactory(void);
-    ~ResourceFactory(void);
+	ResourceFactory(void) {}
+	~ResourceFactory(void) {}
     
 };
 

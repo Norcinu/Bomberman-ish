@@ -1,7 +1,7 @@
 #ifndef SPLASH_STATE_H
 #define SPLASH_STATE_H
 
-#include "basestate.h"
+#include "BaseState.h"
 
 class Engine;
 class Timer;
