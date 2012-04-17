@@ -6,6 +6,7 @@
 #include <iostream>
 #include <algorithm>
 #include <fstream>
+#include <cassert>
 
 class Logger
 {
@@ -21,11 +22,20 @@ public:
 
     static void Append(const char * message) 
     {
+		if (message == nullptr) 
+		{
+			std::string error = __FUNCTION__;
+			error.append(" NULLPTR message param.\n");
+			Logger::WriteToStdio(error.c_str());
+			return;
+		}
+
         strings.push_back(std::string(message));
     }
 
     static void WriteToStdio(const char * message)
     {
+		assert (message != nullptr);
         std::cerr << message << std::endl;
     }
 
@@ -42,17 +52,19 @@ public:
         else
         {
             Logger::WriteToStdio("Error opening logfile");
-            //LOG_WRITE_TO_STDIO("Error opening logfile.");
         }
     }
 
     static void SetFilename(const char * filename)
     {
+		assert (filename != nullptr);
         file_name = filename;
     }
 
     static void ClearBuffer() 
     {
+		file_name = "";
+		strings.clear();
     }
 
 private:

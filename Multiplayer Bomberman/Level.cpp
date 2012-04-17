@@ -2,27 +2,34 @@
 #include "Visualisation.h"
 #include <boost/bind.hpp>
 #include <boost/random.hpp>
+#include <boost/format.hpp>
 #include <fstream>
 #include <ctime>
-
-#pragma warning(disable:4018) // signed/unsigned mismatch
+#include "Logger.h"
 
 const int NUM_SPAWN_POINTS = 4;
 
-Level::Level()
-{
-	num_tiles_high = 15; 
-	num_tiles_wide = 20;
-
-	tile_width = 16;
-	tile_height = 16;
-	
+Level::Level() :
+	num_tiles_high(15),
+	num_tiles_wide(20),
+	tile_width(16),
+	tile_height(16),
+	max_height(num_tiles_high*tile_height),
+	max_width(num_tiles_wide*tile_width),
+	camera_position(math::Vector2())
+{	
 	spawn_points.reserve(NUM_SPAWN_POINTS);
 	srand(time(0));
 }
 
-Level::Level(int tw, int th, int ntw, int nth) : tile_width(tw), tile_height(th),
-	num_tiles_wide(ntw), num_tiles_high(nth)
+Level::Level(int tw, int th, int ntw, int nth) : 
+	tile_width(tw), 
+	tile_height(th),
+	num_tiles_wide(ntw), 
+	num_tiles_high(nth),
+	max_height(num_tiles_high*tile_height),
+	max_width(num_tiles_wide*tile_width),
+	camera_position(math::Vector2())
 {
 	spawn_points.reserve(NUM_SPAWN_POINTS);
 	srand(time(0));
@@ -32,9 +39,11 @@ Level::Level( Level * copy )
 {
 	(*this).num_tiles_high = copy->num_tiles_high;
 	(*this).num_tiles_wide = copy->num_tiles_wide;
-	(*this).tile_height = copy->tile_height;
-	(*this).tile_width  = copy->tile_width;
-
+	(*this).tile_height    = copy->tile_height;
+	(*this).tile_width	   = copy->tile_width;
+	(*this).max_height	   = copy->max_height;
+	(*this).max_width      = copy->max_width;
+	
 	spawn_points.reserve(NUM_SPAWN_POINTS);
 	srand(time(0));
 }
@@ -46,7 +55,7 @@ Level::~Level()
 
 	if (!spawn_points.empty())
 	{
-		for (int i = 0; i < spawn_points.size(); ++i)
+		for (size_t i = 0; i < spawn_points.size(); ++i)
 			delete spawn_points[i];
 		
 		spawn_points.clear();
@@ -64,10 +73,17 @@ void Level::Render(Visualisation * vis)
 // check intersection between the two rectangles, player and tile.
 bool Level::CheckTile( const math::Vector2& tile_position, rec::Rectangle& ent_rec )
 {
-	int tp = static_cast<int>(tile_position.x) / tile_width + 
+	size_t tp = static_cast<int>(tile_position.x) / tile_width + 
 		static_cast<int>(tile_position.y) / tile_height * num_tiles_wide;
 	
-	std::cout << "tp : " << tp << " pos : " << tiles[tp].pos << "\n";
+#ifdef _DEBUG
+	using boost::format;
+	format f("tp : %d pos : %d"); 
+	f % tp % tiles[tp].pos;
+	
+	std::string tile_positions = f.str();
+	LOG_APPEND(tile_positions.c_str());
+#endif
 
 	if (tp > tiles.size()-1 || tp < 0 || tile_position.x < 0 || tile_position.y < 0)
 		return false;
@@ -110,7 +126,7 @@ void Level::SurroundingTiles( std::vector<tile_t>& s, const math::Vector2& tile_
 {
 	std::vector<tile_t> tile_copy;
 	
-	int tp = static_cast<int>(tile_position.y / tile_height);
+	size_t tp = static_cast<int>(tile_position.y / tile_height);
 	tp = tp * num_tiles_wide;
 	tp += static_cast<int>(tile_position.x / tile_width);
 
@@ -151,7 +167,7 @@ void Level::SurroundingTiles( std::vector<tile_t>& s, const math::Vector2& tile_
 
 bool Level::IsValidTile( const int x, const int original ) const
 {
-	if (x < 0 || x > tiles.size()-1 || !tiles[x].is_walkable)
+	if (x < 0 || x > (int)tiles.size()-1 || !tiles[x].is_walkable)
 		return false;
 
 	if (x > original + 1 && x < original + num_tiles_wide)
@@ -175,7 +191,7 @@ bool Level::IsValidTile( const int x, const int original ) const
 
 math::Vector2& Level::DestinationTile( const math::Vector2 destination )
 {
-	int pos = static_cast<int>(destination.y) / tile_height;
+	size_t pos = static_cast<int>(destination.y) / tile_height;
 	pos = pos * num_tiles_wide + (static_cast<int>(destination.x) / tile_width);
 	
 	if (pos >= 0 && pos < tiles.size() && tiles[pos].is_walkable)
@@ -253,14 +269,12 @@ bool Level::LoadData( const std::string& filename, const int first_sprite, const
 
 bool Level::IsWalkable( const math::Vector2& position )
 {
-	for (std::vector<tile_t>::const_iterator it=tiles.begin(); it!=tiles.end(); ++it)
-	{
-		if ((*it).pos == position)
-		{
-			return (*it).is_walkable;
-		}
-	}
-	return false;
+	auto it = std::find_if(tiles.begin(), tiles.end(),[&position](tile_t& t) -> 
+		bool {
+			return t.pos == position;
+		});
+
+	return (*it).is_walkable;
 }
 
 math::Vector2 Level::GetRandomWalkableTile()
@@ -292,12 +306,11 @@ void Level::GetSpawnPoints( std::vector<SpawnPoint_t*>& sp )
 
 void Level::SetTileState( const math::Vector2& position, Uint32 new_states )
 {
-	//tile_itor it = tiles.begin();
 	auto it = std::find_if(tiles.begin(), tiles.end(), [&position](tile_t& t) -> bool 
 	{   
 		return t.pos == position;
 	});
-		//boost::bind(&tile_t::PositionPredicate, _1, position) == true);
+
 	if (it != tiles.end())
 		(*it).tile_state = new_states;
 }

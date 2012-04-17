@@ -7,8 +7,6 @@
 #include "maths.h"
 #include "Rectangle.h"
 
-#pragma warning(disable:4244)
-
 typedef unsigned int Uint32;
 
 struct tile_t
@@ -82,6 +80,8 @@ public:
 	void GetSpawnPoints(std::vector<SpawnPoint_t*>& sp);
 	void SetTileState(const math::Vector2& position, Uint32 new_states);
 
+	math::Vector2 GetCameraPosition() const { return camera_position; }
+
 	typedef std::vector<tile_t>::iterator tile_itor;
 
 private:
@@ -91,6 +91,9 @@ private:
 	int tile_height;
 	int num_tiles_wide;
 	int num_tiles_high;
+	int max_width;
+	int max_height;
+	math::Vector2 camera_position;
 };
 
 #endif

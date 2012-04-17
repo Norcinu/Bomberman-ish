@@ -69,7 +69,7 @@ namespace math
 		return tmp;
 	}
 
-	/*Vector2 Vector2::operator-(const Vector2 &rhs) const
+	Vector2 Vector2::operator-(const Vector2 &rhs) const
 	{
 		Vector2 tmp(*this);
 		tmp -= rhs;
@@ -79,7 +79,7 @@ namespace math
 	Vector2 Vector2::operator*(float scalar) const
 	{
 		return Vector2(x * scalar, y * scalar);
-	}*/
+	}
 
 	Vector2 Vector2::operator/(float scalar) const
 	{

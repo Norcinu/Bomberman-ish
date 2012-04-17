@@ -31,9 +31,9 @@ void Messenger::EmptyQueue()
 	}
 }
 
-EventMessage_t& Messenger::PopFront()
+EventMessage_t Messenger::PopFront()
 {
 	EventMessage_t temp = messages.front();
 	messages.pop_front();
-	return temp;
+	return std::move(temp);
 }

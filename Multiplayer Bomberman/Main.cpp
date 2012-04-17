@@ -11,20 +11,23 @@
 
 #include "Engine.h"
 #include "SplashState.h"
-#include "FastDelegate/FastDelegate.h"
 #include "Logger.h"
 
 int main(int argc, char *argv[])
 {
+#ifdef _DEBUG
+	#ifdef __LINUX__ // !!!! MOVE THIS TO MAIN STARTUP !!!!
+	const std::string delim = "//"
+#else
+	const std::string delim = "\\";
+#endif // __LINUX__
+	std::string log_file = "Logfiles" + delim + "tiles.txt";
+	LOG_SET_FILENAME(log_file.c_str());
+#endif // _DEBUG
+
 	Engine engine;
 	if (!engine.Initialise())
 		return -1;
-   
-    /*LOG_WRITE_TO_STDIO("fuck off");
-    LOG_SET_FILENAME("test1.txt");
-    LOG_APPEND("TEST 1");
-    LOG_APPEND("TEST 2");
-    LOG_WRITE_FILE;*/
 
 	engine.ChangeState(SplashState::GetInstance());
 
@@ -35,5 +38,8 @@ int main(int argc, char *argv[])
 		engine.Render();
 	}
 
+#ifdef _DEBUG
+	LOG_WRITE_FILE;
+#endif
 	return 0;
 }

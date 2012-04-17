@@ -13,7 +13,7 @@ public:
 	void AddMessage(const EventMessage_t& msg);
 	void EmptyQueue();
 	bool IsEmpty() const { return messages.empty(); }
-	EventMessage_t& PopFront(); 
+	EventMessage_t PopFront(); 
 
 private:
 	std::deque<EventMessage_t> messages;
