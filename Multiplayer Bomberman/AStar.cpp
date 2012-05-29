@@ -55,7 +55,7 @@ void AStar::Search( std::vector<node_t>& path, const math::Vector2& position, co
 			break;
 		}
 		
-		std::vector<tile_t> surrounding_tiles;
+		std::vector<tile_t*> surrounding_tiles;
 		level_copy->SurroundingTiles(surrounding_tiles, open_list[0].position);
 		
 		for (Level::tile_itor i = surrounding_tiles.begin();i!=surrounding_tiles.end();++i)
@@ -63,15 +63,15 @@ void AStar::Search( std::vector<node_t>& path, const math::Vector2& position, co
 			bool add_node = true;
 			for (node_itor j = closed_list.begin();j!=closed_list.end();++j)
 			{
-				if (i->pos == j->position)
+				if ((*i)->pos == j->position)
 					add_node = false;
 			}
 		
 			for (node_itor j = open_list.begin();j!=open_list.end();++j)
 			{
-				if (i->pos == j->position)
+				if ((*i)->pos == j->position)
 				{
-					int g = CalculateG(i->pos,open_list[0].position, open_list[0].g_score);
+					int g = CalculateG((*i)->pos, open_list[0].position, open_list[0].g_score);
 					if (g < j->g_score)
 					{
 						j->g_score = g;
@@ -86,9 +86,9 @@ void AStar::Search( std::vector<node_t>& path, const math::Vector2& position, co
 				node_t valid_node;
 				valid_node.id = ID;
 				valid_node.parent_id = open_list[0].id;
-				valid_node.position = (*i).pos;
-				valid_node.g_score = CalculateG((*i).pos, open_list[0].position, open_list[0].g_score);
-				valid_node.h_score = CalculateH((*i).pos, goal);				
+				valid_node.position = (*i)->pos;
+				valid_node.g_score = CalculateG((*i)->pos, open_list[0].position, open_list[0].g_score);
+				valid_node.h_score = CalculateH((*i)->pos, goal);				
 				open_list.push_back(valid_node);
 				++ID;
 			}

@@ -72,7 +72,7 @@ public:
 	bool IsValidTile(const int x, const int original) const;
 	bool CheckTile(const math::Vector2& tile_position, rec::Rectangle& ent_rec);
 	
-	void SurroundingTiles(std::vector<tile_t>& s, const math::Vector2& tile_position);
+	void SurroundingTiles(std::vector<tile_t*>& s, const math::Vector2& tile_position);
 	math::Vector2 TileDimensions() { return math::Vector2(tile_width, tile_height); }
 	math::Vector2& DestinationTile(const math::Vector2 destination);
 	math::Vector2 GetRandomWalkableTile();
@@ -82,10 +82,10 @@ public:
 
 	math::Vector2 GetCameraPosition() const { return camera_position; }
 
-	typedef std::vector<tile_t>::iterator tile_itor;
+	typedef std::vector<tile_t*>::iterator tile_itor;
 
 private:
-	std::vector<tile_t> tiles;
+	std::vector<tile_t*> tiles;
 	std::vector<SpawnPoint_t*> spawn_points;
 	int tile_width;
 	int tile_height;
