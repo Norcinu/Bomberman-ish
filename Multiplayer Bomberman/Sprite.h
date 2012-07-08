@@ -5,7 +5,7 @@
 #include <SDL_opengl.h>
 #include <string>
 #include "maths.h"
-//#include "Common.h"
+
 
 class Sprite
 {

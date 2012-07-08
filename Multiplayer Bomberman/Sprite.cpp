@@ -5,7 +5,7 @@
 #include <vector>
 #include <cstdlib>
 #include <SDL_opengl.h>
-
+#include "Common.h"
 
 #pragma warning(disable:4244)
 
@@ -72,7 +72,7 @@ bool Sprite::Load( const std::string& filename )
 	frame_width = ConvertStringToInt(description[1]);
 	frame_height = ConvertStringToInt(description[2]);
 	start_frame = ConvertStringToInt(description[3]);
-    //name = common::FStripPathAndExtension(description[0]);
+    name = common::FStripPathAndExtension(description[0]);
     
 	if (sprite == nullptr) 
 		return false;

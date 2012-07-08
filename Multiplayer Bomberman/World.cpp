@@ -10,6 +10,7 @@
 #include "maths.h"
 #include "Messenger.h"
 #include "BotStates.h"
+#include "Common.h"
 
 #include <algorithm>
 #include <fstream>
