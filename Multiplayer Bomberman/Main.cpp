@@ -16,7 +16,7 @@
 int main(int argc, char *argv[])
 {
 #ifdef _DEBUG
-	#ifdef __LINUX__ // !!!! MOVE THIS TO MAIN STARTUP !!!!
+#ifdef __LINUX__ // !!!! MOVE THIS TO MAIN STARTUP !!!!
 	const std::string delim = "//"
 #else
 	const std::string delim = "\\";
@@ -41,5 +41,6 @@ int main(int argc, char *argv[])
 #ifdef _DEBUG
 	LOG_WRITE_FILE;
 #endif
+
 	return 0;
 }

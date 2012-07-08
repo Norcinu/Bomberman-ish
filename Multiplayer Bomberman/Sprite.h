@@ -5,6 +5,7 @@
 #include <SDL_opengl.h>
 #include <string>
 #include "maths.h"
+//#include "Common.h"
 
 class Sprite
 {
@@ -23,6 +24,7 @@ public:
 
 	int GetWidth() const { return sprite->clip_rect.w; }
 	int GetHeight() const { return sprite->clip_rect.h; }
+    std::string GetName() const { return name; }
 
 private:
 	SDL_Surface * sprite;
@@ -33,6 +35,8 @@ private:
 	//int number_of_frames;
 	int frame_width;
 	int frame_height;
+
+    std::string name;
 
 #ifdef USING_OPENGL
 	GLuint texture;

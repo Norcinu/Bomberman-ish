@@ -19,6 +19,7 @@ public:
 	bool Initialise(const int height, const int width, bool fscreen=false);
 	bool AddSprite(int * id, const std::string& file); 
 	bool IsEmpty() const { return sprites.empty(); }
+    bool DoesSpriteExist(const std::string& name) const;
 
 	void ClearScreen();
 	void ClearScreen(Uint32 colour);
@@ -38,7 +39,9 @@ public:
 	
 	Uint32 GetPixel(SDL_Surface * surface, int x, int y);
 	SDL_Surface * GetScreenSurface() const { return screen; }
-	
+
+    int GetSpriteID(const std::string& sprite_name) const;
+
 private:
 	SDL_Surface * screen;
 	bool full_screen;

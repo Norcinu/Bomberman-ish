@@ -14,7 +14,7 @@
     <ProjectGuid>{006D13DF-9663-42AA-9D9C-934F06BB556B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MultiplayerBomberman</RootNamespace>
-    <ProjectName>Bomberman Client</ProjectName>
+    <ProjectName>Client</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -57,12 +57,14 @@
       <OpenMPSupport>false</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_ttf.lib;glu32.lib;opengl32.lib;fmodexL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <TargetMachine>MachineX86</TargetMachine>
+      <ShowProgress>NotSet</ShowProgress>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -118,6 +120,7 @@
     <ClInclude Include="BaseState.h" />
     <ClInclude Include="BitmapFont.h" />
     <ClInclude Include="BombEntity.h" />
+    <ClInclude Include="Common.h" />
     <ClInclude Include="Components.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Entity.h" />
@@ -133,6 +136,7 @@
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="MessageEvent.h" />
     <ClInclude Include="Messenger.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="PlayerEntity.h" />
     <ClInclude Include="PlayerStats.h" />
     <ClInclude Include="PlayState.h" />

@@ -1,12 +1,14 @@
 #include "Visualisation.h"
 #include "Sprite.h"
+
 #include <cassert>
 #include <iostream>
-#include <string>
 #include <SDL_opengl.h>
 #include <cmath>
+#include <algorithm>
 
 #pragma warning(disable:4244)
+
 
 //#define USING_OPENGL
 
@@ -88,11 +90,18 @@ bool Visualisation::Initialise(const int height, const int width, bool fscreen)
 
 bool Visualisation::AddSprite( int * id, const std::string& file )
 {
+    if (DoesSpriteExist(file)) {
+        std::cout << "File already exists.\n";
+        *id = -1;
+        return false;
+    }
+
 	Sprite *spr = new Sprite;
 	
 	if (!spr->Load(file))
 	{
 		*id = -1;
+        delete spr;
 		return false;
 	}
 
@@ -108,6 +117,16 @@ bool Visualisation::AddSprite( int * id, const std::string& file )
 	return true;
 }
 
+int Visualisation::GetSpriteID(const std::string& sprite_name) const {
+    if (DoesSpriteExist(sprite_name)) {
+        for (auto i = 0; i < sprites.size()-1; i++) {
+            if (sprites[i]->GetName() == sprite_name) 
+                return i;
+        }
+    }
+    return -1;
+}
+
 void Visualisation::ClearScreen()
 {
 	//CalculateFPS();		
@@ -119,6 +138,21 @@ void Visualisation::ClearScreen()
 	SDL_FillRect(SDL_GetVideoSurface(), nullptr, SDL_MapRGB(SDL_GetVideoSurface()->format, 0,0,0));
 #endif
 	
+}
+
+bool Visualisation::DoesSpriteExist(const std::string& name) const {
+    auto it = std::find_if(sprites.begin(), sprites.end(), 
+        [&name](Sprite * s) -> bool {
+            if (name == s->GetName())
+                return true;
+            else
+                return false;
+        });
+   
+    if (it != sprites.end())
+        return true;
+    else
+        return false;
 }
 
 void Visualisation::ClearScreen( Uint32 colour )
@@ -171,10 +205,10 @@ void Visualisation::BeginScene()
     glLoadIdentity();
 #else
 	ClearScreen(SDL_MapRGB(screen->format, 0,0,0)); 
-    //DrawLine(math::Vector2(1,1), math::Vector2(33,1));
-    //DrawLine(math::Vector2(1,33), math::Vector2(33,33));
-    //DrawLine(math::Vector2(1,1), math::Vector2(1,-33));
-    //DrawLine(math::Vector2(33,33), math::Vector2(33,1));
+    /*DrawLine(math::Vector2(1,1), math::Vector2(33,1));
+    DrawLine(math::Vector2(1,33), math::Vector2(33,33));
+    DrawLine(math::Vector2(1,1), math::Vector2(1,-33));
+    DrawLine(math::Vector2(33,33), math::Vector2(33,1));*/
 #endif 
 }
 

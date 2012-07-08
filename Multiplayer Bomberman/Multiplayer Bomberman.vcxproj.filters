@@ -28,6 +28,9 @@
     <Filter Include="Sound">
       <UniqueIdentifier>{dd003872-19c0-492b-b092-ba41aab306a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Parser">
+      <UniqueIdentifier>{76599335-dc37-4f42-a96f-158bae80e8d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -224,6 +227,12 @@
     </ClInclude>
     <ClInclude Include="ResourceFactory.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Parser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

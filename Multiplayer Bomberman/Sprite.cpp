@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <SDL_opengl.h>
 
+
 #pragma warning(disable:4244)
 
 inline int ConvertStringToInt(const std::string& s)
@@ -56,7 +57,12 @@ bool Sprite::Load( const std::string& filename )
 	while(std::getline(config, line)) 
 	{
 		size_t pos = line.find(" ")+1;
-		std::string temp = line.substr(pos);
+        
+        // check for comments
+        if (line[0] == '#')
+            continue;
+        
+        std::string temp = line.substr(pos);
 		description.push_back(temp);
 	}
 
@@ -66,7 +72,8 @@ bool Sprite::Load( const std::string& filename )
 	frame_width = ConvertStringToInt(description[1]);
 	frame_height = ConvertStringToInt(description[2]);
 	start_frame = ConvertStringToInt(description[3]);
-	
+    //name = common::FStripPathAndExtension(description[0]);
+    
 	if (sprite == nullptr) 
 		return false;
 

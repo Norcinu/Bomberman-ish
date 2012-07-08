@@ -9,7 +9,6 @@
 #include "Explosion.h"
 #include "maths.h"
 #include "Messenger.h"
-//#include "EntitySystem.h"
 #include "BotStates.h"
 
 #include <algorithm>
@@ -59,7 +58,7 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
 		return false;
 
 	int gid1 = 0;
-	if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\brick.spr")))
+    if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\brick.spr")))
 		return false;
 
 	int gid2 = 0;
@@ -74,12 +73,18 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
 	if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\sprite.spr")))
 		return false;
 
+    
 	AddPlayer(gid1, false);
 	AddPlayer(gid1);
 	AddPlayer(gid1);
 	AddPlayer(gid1);
 	
-	if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\bomb.spr")))
+    int myid = vis->GetSpriteID("brick");
+    std::cout << "myid is " << myid << "\n";
+    myid = vis->GetSpriteID("bomb");
+    std::cout << "myid is " << myid << "\n";
+
+    if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\bomb.spr")))
 		return false;
 	
 	CreateBombList(gid1);
@@ -215,7 +220,7 @@ void World::Render(Visualisation* vis) const
 {
 	double delta = (game_timer->Milliseconds() / update_delta) / tick_rate;
 	vis->BeginScene();
-	//current_level->Render(vis);
+	current_level->Render(vis);
 	
 	// draw active bombs
 	std::for_each(bomb_list.begin(), bomb_list.end(), [&delta, &vis](BombEntity *bomb) -> void 
