@@ -6,6 +6,7 @@
 #include <string>
 #include "maths.h"
 
+//#define USING_OPENGL
 
 class Sprite
 {

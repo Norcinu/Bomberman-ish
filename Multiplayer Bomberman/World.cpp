@@ -15,11 +15,19 @@
 #include <algorithm>
 #include <fstream>
 #include <boost\bind.hpp>
+#include <functional>
 
 //EntitySystem entity_system;
 //Entity game_entities[MAX_PLAYERS];
 
 int id = 0; 
+
+std::function<bool (BaseEntity*, BaseEntity*)> ReturnSort() {
+    return [](BaseEntity* ent1, BaseEntity* ent2) {
+        return ent1->GetPosition().LessThanX(ent2->GetPosition().x) || 
+            ent1->GetPosition().LessThanY(ent2->GetPosition().y);
+    };
+}
 
 World::World(void) : 
     game_timer(new Timer), 
@@ -202,6 +210,15 @@ void World::Update()
 	}
 
 	// collision loop. can we sort these by x and y position?
+    entity_store sorted = entities;
+    //auto sorter = ReturnSort();
+    
+    auto sorter = [](BaseEntity* ent1, BaseEntity* ent2) {
+        return ent1->GetPosition().LessThanX(ent2->GetPosition().x) || 
+            ent1->GetPosition().LessThanY(ent2->GetPosition().y);
+    };
+    
+    std::sort(sorted.begin(), sorted.end(), sorter); 
 	for (size_t i = 0; i < entities.size(); ++i)
 	{
 		for (size_t j = i+1; j < entities.size(); ++j)

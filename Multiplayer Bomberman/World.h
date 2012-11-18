@@ -67,6 +67,7 @@ private:
 	int tick_rate;
 	double update_delta;
 
+    typedef std::vector<BaseEntity*> entity_store;
 	typedef std::vector<BaseEntity*>::iterator ent_itor;
 	typedef std::vector<BaseEntity*>::const_iterator const_ent_itor;
 	typedef std::vector<BombEntity*>::iterator bomb_itor;

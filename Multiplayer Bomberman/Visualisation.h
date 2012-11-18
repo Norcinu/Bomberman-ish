@@ -41,6 +41,7 @@ public:
 	SDL_Surface * GetScreenSurface() const { return screen; }
 
     int GetSpriteID(const std::string& sprite_name) const;
+    int GetNumberOfSprites() const { return total_sprites; }
 
 private:
 	SDL_Surface * screen;
@@ -48,6 +49,7 @@ private:
 	int screen_width;
 	int screen_height;
 	int screen_depth;
+    int total_sprites;
 	std::vector<Sprite*> sprites;
 	SDL_Rect ui_rectangle;
 };

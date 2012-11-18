@@ -121,6 +121,9 @@ namespace math
 		Vector2 operator-(const Vector2 &rhs) const;
 		Vector2 operator*(float scalar) const;
 		Vector2 operator/(float scalar) const;
+        
+        bool LessThanX(const float x_) const;
+        bool LessThanY(const float y_) const;
 
 		friend std::ostream& operator<<(std::ostream& os, const Vector2& vec)
 		{

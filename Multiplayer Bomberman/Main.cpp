@@ -15,6 +15,17 @@
 
 int main(int argc, char *argv[])
 {
+    /*int num1, num2, result;
+    __asm {
+        MOV num1, 248
+        MOV num2, 405
+        MOV EAX, num1
+        ADD EAX, num2
+        MOV result, EAX
+    }
+    std::cout << num1 << std::endl;
+    std::cout << num2 << std::endl;
+    std::cout << result << std::endl;*/
 #ifdef _DEBUG
 #ifdef __LINUX__ // !!!! MOVE THIS TO MAIN STARTUP !!!!
 	const std::string delim = "//"
@@ -42,5 +53,5 @@ int main(int argc, char *argv[])
 	LOG_WRITE_FILE;
 #endif
 
-	return 0;
+    return 0;
 }

@@ -22,7 +22,8 @@ Visualisation::Visualisation(void)
 	screen_width  = 512;
 	screen_height = 512;
 	screen_depth  = 24;
-	
+	total_sprites = 0;
+
 	full_screen = false;
 
 	ui_rectangle.h = 32;
@@ -105,6 +106,7 @@ bool Visualisation::AddSprite( int * id, const std::string& file )
 		return false;
 	}
 
+    ++total_sprites;
 	sprites.push_back(spr);
 	*id = static_cast<int>(sprites.size() - 1);
 	
@@ -289,6 +291,7 @@ void Visualisation::ClearGraphicSet()
 {	
 	while (!sprites.empty())
 	{
+        --total_sprites;
 		sprites.pop_back();
 	}
 }

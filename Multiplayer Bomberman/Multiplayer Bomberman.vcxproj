@@ -40,8 +40,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>c:\libs\SDL-1.2.14\include;c:\Program Files (x86)\boost\boost_1_47;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Win32\api\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>c:\libs\SDL-1.2.14\lib;c:\Program Files (x86)\boost\boost_1_47\lib;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Win32\api\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>c:\libs\SDL-1.2.14\include;c:\Program Files\boost\boost_1_51;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Win32\api\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>c:\libs\SDL-1.2.14\lib;c:\Program Files\boost\boost_1_51\lib;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Win32\api\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

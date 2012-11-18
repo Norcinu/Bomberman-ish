@@ -86,6 +86,16 @@ namespace math
 		return Vector2(x / scalar, y / scalar);
 	}
 
+    bool Vector2::LessThanX(const float x_) const
+    {
+        return x < x_;
+    }
+
+    bool Vector2::LessThanY(const float y_) const
+    {
+        return y < y_;
+    }
+
 	float Vector2::Dot( const Vector2& p, const Vector2& q ) const
 	{
 		return (p.x * q.x) + (p.y * q.y);
