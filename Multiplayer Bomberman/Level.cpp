@@ -1,8 +1,8 @@
 #include "Level.h"
 #include "Visualisation.h"
-#include <boost\bind.hpp>
-#include <boost\random.hpp>
-#include <boost\format.hpp>
+#include <boost/bind.hpp>
+#include <boost/random.hpp>
+#include <boost/format.hpp>
 #include <fstream>
 #include <ctime>
 #include "Logger.h"
@@ -69,16 +69,17 @@ Level::~Level()
 
 void Level::Render(Visualisation * vis)
 {
+    math::Vector2 frame(0,0);
 	for (tile_itor it=tiles.begin(); it != tiles.end(); ++it)
 		//if (!(*it).is_walkable)
 		if((*it)->tile_state & BRICK) 
-			vis->DrawSprite((*it)->id, math::Vector2(0,0), (*it)->pos);
+			vis->DrawSprite((*it)->id, frame, (*it)->pos);
 }
 
 // check intersection between the two rectangles, player and tile.
 bool Level::CheckTile( const math::Vector2& tile_position, rec::Rectangle& ent_rec )
 {
-	size_t tp = static_cast<int>(tile_position.x) / tile_width + 
+	auto tp = static_cast<int>(tile_position.x) / tile_width +
 		static_cast<int>(tile_position.y) / tile_height * num_tiles_wide;
 	
 #ifdef _DEBUG
@@ -99,6 +100,7 @@ bool Level::CheckTile( const math::Vector2& tile_position, rec::Rectangle& ent_r
 	if (tiles[tp]->tile_state & BRICK)
 		return false;
 
+    return true;
 	//return true;
 	// Eats a brick!!!!
 	//if (tiles[tp].tile_state &= ~BRICK)
@@ -196,7 +198,7 @@ bool Level::IsValidTile( const int x, const int original ) const
 
 math::Vector2& Level::DestinationTile( const math::Vector2 destination )
 {
-	size_t pos = static_cast<int>(destination.y) / tile_height;
+	auto pos = static_cast<int>(destination.y) / tile_height;
 	pos = pos * num_tiles_wide + (static_cast<int>(destination.x) / tile_width);
 	
 	if (pos >= 0 && pos < tiles.size() && tiles[pos]->is_walkable)
@@ -208,7 +210,7 @@ math::Vector2& Level::DestinationTile( const math::Vector2 destination )
 bool Level::LoadData( const std::string& filename, const int first_sprite, const int second_sprite ) 
 {
 	std::fstream level_data(filename.c_str());
-	if (!level_data)
+	if (!level_data.is_open())
 	{
 		std::cout << "Error loading level data file." << std::endl;
 		return false;

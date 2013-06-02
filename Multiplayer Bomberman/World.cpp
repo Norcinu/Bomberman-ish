@@ -14,7 +14,7 @@
 
 #include <algorithm>
 #include <fstream>
-#include <boost\bind.hpp>
+#include <boost/bind.hpp>
 #include <functional>
 
 //EntitySystem entity_system;
@@ -61,17 +61,17 @@ World::~World(void)
 
 bool World::Initialise(const std::string& assets, Visualisation * vis)
 {
-	std::cout << "world->init";
+	std::cout << "world->init" << std::endl;
 	current_level = new Level;//(32, 32, 20, 15);
 	if (current_level == nullptr)
 		return false;
 
 	int gid1 = 0;
-    if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\brick.spr")))
+    if (!vis->AddSprite(&gid1, std::string("data//bitmaps//brick.spr")))
 		return false;
 
 	int gid2 = 0;
-	if (!vis->AddSprite(&gid2, std::string("data\\bitmaps\\destroyable_brick.spr")))
+	if (!vis->AddSprite(&gid2, std::string("data//bitmaps//destroyable_brick.spr")))
 		return false;
 	
 	if (!current_level->LoadData(assets, gid1, gid2))
@@ -79,7 +79,7 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
 
 	current_level->GetSpawnPoints(spawns);
 	
-	if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\sprite.spr")))
+	if (!vis->AddSprite(&gid1, std::string("data//bitmaps//sprite.spr")))
 		return false;
 
     
@@ -93,7 +93,7 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
     myid = vis->GetSpriteID("bomb");
     std::cout << "myid is " << myid << "\n";
 
-    if (!vis->AddSprite(&gid1, std::string("data\\bitmaps\\bomb.spr")))
+    if (!vis->AddSprite(&gid1, std::string("data//bitmaps//bomb.spr")))
 		return false;
 	
 	CreateBombList(gid1);
@@ -112,7 +112,7 @@ void World::CleanUp()
 	for (bomb_itor it = bomb_list.begin(); it != bomb_list.end(); ++it)
 		delete *it;
 
-	for (explosion_itor it = explosion_list.begin(); it != explosion_list.end(); it)
+	for (explosion_itor it = explosion_list.begin(); it != explosion_list.end(); ++it)
 		delete *it;
 
 	if (game_timer != nullptr)
@@ -391,5 +391,9 @@ void World::ParseMessage(const EventMessage_t& msg)
 		entities[msg.id]->Move(math::Vector2(4, 0));
 		entities[msg.id]->DoAnimation();
 		break;
+    case EventMessage_t::EXPLOSION:
+        break;
+    case EventMessage_t::DIE:
+        break;
 	}
 }

@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00FFF4E173FCB7E00766F50 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B00FFF4D173FCB7E00766F50 /* libjson.a */; };
+		B021D507173E8EC400B354B8 /* libSDLmain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B021D506173E8EC400B354B8 /* libSDLmain.a */; };
+		B021D509173E8EC800B354B8 /* libSDL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B021D508173E8EC800B354B8 /* libSDL.a */; };
+		B021D50D173E8EE500B354B8 /* libSDL_ttf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B021D50C173E8EE500B354B8 /* libSDL_ttf.a */; };
+		B03D1AE817136A9000C20A0E /* Bomberman_ish.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B03D1AE717136A9000C20A0E /* Bomberman_ish.1 */; };
+		B03D1B3917136AC300C20A0E /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1AEE17136AC300C20A0E /* AStar.cpp */; };
+		B03D1B3A17136AC300C20A0E /* BaseEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1AF017136AC300C20A0E /* BaseEntity.cpp */; };
+		B03D1B3B17136AC300C20A0E /* BaseState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1AF217136AC300C20A0E /* BaseState.cpp */; };
+		B03D1B3C17136AC300C20A0E /* BitmapFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1AF417136AC300C20A0E /* BitmapFont.cpp */; };
+		B03D1B3D17136AC300C20A0E /* BombEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1AF617136AC300C20A0E /* BombEntity.cpp */; };
+		B03D1B3E17136AC300C20A0E /* BotEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1AF817136AC300C20A0E /* BotEntity.cpp */; };
+		B03D1B3F17136AC300C20A0E /* BotStates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1AFA17136AC300C20A0E /* BotStates.cpp */; };
+		B03D1B4017136AC300C20A0E /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1AFE17136AC300C20A0E /* Engine.cpp */; };
+		B03D1B4117136AC300C20A0E /* Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B0217136AC300C20A0E /* Events.cpp */; };
+		B03D1B4217136AC300C20A0E /* Explosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B0417136AC300C20A0E /* Explosion.cpp */; };
+		B03D1B4317136AC300C20A0E /* GameMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B0917136AC300C20A0E /* GameMenu.cpp */; };
+		B03D1B4417136AC300C20A0E /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B0B17136AC300C20A0E /* Level.cpp */; };
+		B03D1B4517136AC300C20A0E /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B0D17136AC300C20A0E /* Logger.cpp */; };
+		B03D1B4617136AC300C20A0E /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B0F17136AC300C20A0E /* Main.cpp */; };
+		B03D1B4717136AC300C20A0E /* maths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B1017136AC300C20A0E /* maths.cpp */; };
+		B03D1B4817136AC300C20A0E /* MenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B1217136AC300C20A0E /* MenuState.cpp */; };
+		B03D1B4917136AC300C20A0E /* Messenger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B1517136AC300C20A0E /* Messenger.cpp */; };
+		B03D1B4A17136AC300C20A0E /* PlayerEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B1B17136AC300C20A0E /* PlayerEntity.cpp */; };
+		B03D1B4B17136AC300C20A0E /* PlayState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B1E17136AC300C20A0E /* PlayState.cpp */; };
+		B03D1B4C17136AC300C20A0E /* Profiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B2017136AC300C20A0E /* Profiler.cpp */; };
+		B03D1B4D17136AC300C20A0E /* ResourceFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B2517136AC300C20A0E /* ResourceFactory.cpp */; };
+		B03D1B4E17136AC300C20A0E /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B2817136AC300C20A0E /* SoundManager.cpp */; };
+		B03D1B4F17136AC300C20A0E /* SplashState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B2A17136AC300C20A0E /* SplashState.cpp */; };
+		B03D1B5017136AC300C20A0E /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B2C17136AC300C20A0E /* Sprite.cpp */; };
+		B03D1B5117136AC300C20A0E /* TextManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B3117136AC300C20A0E /* TextManager.cpp */; };
+		B03D1B5217136AC300C20A0E /* Visualisation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B3517136AC300C20A0E /* Visualisation.cpp */; };
+		B03D1B5317136AC300C20A0E /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B3717136AC300C20A0E /* World.cpp */; };
+		B08DD798173E946200BAF6EC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08DD797173E946200BAF6EC /* OpenGL.framework */; };
+		B08DD79A173E946900BAF6EC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08DD799173E946900BAF6EC /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B03D1AE017136A9000C20A0E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				B03D1AE817136A9000C20A0E /* Bomberman_ish.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B00FFF4D173FCB7E00766F50 /* libjson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjson.a; path = "../../../../../../usr/local/Cellar/json-c/0.10/lib/libjson.a"; sourceTree = "<group>"; };
+		B021D506173E8EC400B354B8 /* libSDLmain.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDLmain.a; path = ../../../../../../usr/local/Cellar/sdl/1.2.15/lib/libSDLmain.a; sourceTree = "<group>"; };
+		B021D508173E8EC800B354B8 /* libSDL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL.a; path = ../../../../../../usr/local/Cellar/sdl/1.2.15/lib/libSDL.a; sourceTree = "<group>"; };
+		B021D50A173E8ED400B354B8 /* libSDL_image.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL_image.a; path = ../../../../../../usr/local/Cellar/sdl_image/1.2.12/lib/libSDL_image.a; sourceTree = "<group>"; };
+		B021D50C173E8EE500B354B8 /* libSDL_ttf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL_ttf.a; path = ../../../../../../usr/local/Cellar/sdl_ttf/2.0.11/lib/libSDL_ttf.a; sourceTree = "<group>"; };
+		B03D1AE217136A9000C20A0E /* Bomberman-ish */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Bomberman-ish"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B03D1AE717136A9000C20A0E /* Bomberman_ish.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Bomberman_ish.1; sourceTree = "<group>"; };
+		B03D1AEE17136AC300C20A0E /* AStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AStar.cpp; path = "../../Multiplayer Bomberman/AStar.cpp"; sourceTree = "<group>"; };
+		B03D1AEF17136AC300C20A0E /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AStar.h; path = "../../Multiplayer Bomberman/AStar.h"; sourceTree = "<group>"; };
+		B03D1AF017136AC300C20A0E /* BaseEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseEntity.cpp; path = "../../Multiplayer Bomberman/BaseEntity.cpp"; sourceTree = "<group>"; };
+		B03D1AF117136AC300C20A0E /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseEntity.h; path = "../../Multiplayer Bomberman/BaseEntity.h"; sourceTree = "<group>"; };
+		B03D1AF217136AC300C20A0E /* BaseState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseState.cpp; path = "../../Multiplayer Bomberman/BaseState.cpp"; sourceTree = "<group>"; };
+		B03D1AF317136AC300C20A0E /* BaseState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseState.h; path = "../../Multiplayer Bomberman/BaseState.h"; sourceTree = "<group>"; };
+		B03D1AF417136AC300C20A0E /* BitmapFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BitmapFont.cpp; path = "../../Multiplayer Bomberman/BitmapFont.cpp"; sourceTree = "<group>"; };
+		B03D1AF517136AC300C20A0E /* BitmapFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BitmapFont.h; path = "../../Multiplayer Bomberman/BitmapFont.h"; sourceTree = "<group>"; };
+		B03D1AF617136AC300C20A0E /* BombEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BombEntity.cpp; path = "../../Multiplayer Bomberman/BombEntity.cpp"; sourceTree = "<group>"; };
+		B03D1AF717136AC300C20A0E /* BombEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BombEntity.h; path = "../../Multiplayer Bomberman/BombEntity.h"; sourceTree = "<group>"; };
+		B03D1AF817136AC300C20A0E /* BotEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BotEntity.cpp; path = "../../Multiplayer Bomberman/BotEntity.cpp"; sourceTree = "<group>"; };
+		B03D1AF917136AC300C20A0E /* BotEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BotEntity.h; path = "../../Multiplayer Bomberman/BotEntity.h"; sourceTree = "<group>"; };
+		B03D1AFA17136AC300C20A0E /* BotStates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BotStates.cpp; path = "../../Multiplayer Bomberman/BotStates.cpp"; sourceTree = "<group>"; };
+		B03D1AFB17136AC300C20A0E /* BotStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BotStates.h; path = "../../Multiplayer Bomberman/BotStates.h"; sourceTree = "<group>"; };
+		B03D1AFC17136AC300C20A0E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = "../../Multiplayer Bomberman/Common.h"; sourceTree = "<group>"; };
+		B03D1AFD17136AC300C20A0E /* Components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Components.h; path = "../../Multiplayer Bomberman/Components.h"; sourceTree = "<group>"; };
+		B03D1AFE17136AC300C20A0E /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = "../../Multiplayer Bomberman/Engine.cpp"; sourceTree = "<group>"; };
+		B03D1AFF17136AC300C20A0E /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Engine.h; path = "../../Multiplayer Bomberman/Engine.h"; sourceTree = "<group>"; };
+		B03D1B0017136AC300C20A0E /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entity.h; path = "../../Multiplayer Bomberman/Entity.h"; sourceTree = "<group>"; };
+		B03D1B0117136AC300C20A0E /* EntityImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntityImpl.h; path = "../../Multiplayer Bomberman/EntityImpl.h"; sourceTree = "<group>"; };
+		B03D1B0217136AC300C20A0E /* Events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Events.cpp; path = "../../Multiplayer Bomberman/Events.cpp"; sourceTree = "<group>"; };
+		B03D1B0317136AC300C20A0E /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Events.h; path = "../../Multiplayer Bomberman/Events.h"; sourceTree = "<group>"; };
+		B03D1B0417136AC300C20A0E /* Explosion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Explosion.cpp; path = "../../Multiplayer Bomberman/Explosion.cpp"; sourceTree = "<group>"; };
+		B03D1B0517136AC300C20A0E /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = "../../Multiplayer Bomberman/Explosion.h"; sourceTree = "<group>"; };
+		B03D1B0717136AC300C20A0E /* FastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastDelegate.h; sourceTree = "<group>"; };
+		B03D1B0817136AC300C20A0E /* FastDelegateBind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastDelegateBind.h; sourceTree = "<group>"; };
+		B03D1B0917136AC300C20A0E /* GameMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameMenu.cpp; path = "../../Multiplayer Bomberman/GameMenu.cpp"; sourceTree = "<group>"; };
+		B03D1B0A17136AC300C20A0E /* GameMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameMenu.h; path = "../../Multiplayer Bomberman/GameMenu.h"; sourceTree = "<group>"; };
+		B03D1B0B17136AC300C20A0E /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Level.cpp; path = "../../Multiplayer Bomberman/Level.cpp"; sourceTree = "<group>"; };
+		B03D1B0C17136AC300C20A0E /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = "../../Multiplayer Bomberman/Level.h"; sourceTree = "<group>"; };
+		B03D1B0D17136AC300C20A0E /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logger.cpp; path = "../../Multiplayer Bomberman/Logger.cpp"; sourceTree = "<group>"; };
+		B03D1B0E17136AC300C20A0E /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = "../../Multiplayer Bomberman/Logger.h"; sourceTree = "<group>"; };
+		B03D1B0F17136AC300C20A0E /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = "../../Multiplayer Bomberman/Main.cpp"; sourceTree = "<group>"; };
+		B03D1B1017136AC300C20A0E /* maths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = maths.cpp; path = "../../Multiplayer Bomberman/maths.cpp"; sourceTree = "<group>"; };
+		B03D1B1117136AC300C20A0E /* maths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = maths.h; path = "../../Multiplayer Bomberman/maths.h"; sourceTree = "<group>"; };
+		B03D1B1217136AC300C20A0E /* MenuState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MenuState.cpp; path = "../../Multiplayer Bomberman/MenuState.cpp"; sourceTree = "<group>"; };
+		B03D1B1317136AC300C20A0E /* MenuState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuState.h; path = "../../Multiplayer Bomberman/MenuState.h"; sourceTree = "<group>"; };
+		B03D1B1417136AC300C20A0E /* MessageEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageEvent.h; path = "../../Multiplayer Bomberman/MessageEvent.h"; sourceTree = "<group>"; };
+		B03D1B1517136AC300C20A0E /* Messenger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Messenger.cpp; path = "../../Multiplayer Bomberman/Messenger.cpp"; sourceTree = "<group>"; };
+		B03D1B1617136AC300C20A0E /* Messenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Messenger.h; path = "../../Multiplayer Bomberman/Messenger.h"; sourceTree = "<group>"; };
+		B03D1B1A17136AC300C20A0E /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Parser.h; path = "../../Multiplayer Bomberman/Parser.h"; sourceTree = "<group>"; };
+		B03D1B1B17136AC300C20A0E /* PlayerEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerEntity.cpp; path = "../../Multiplayer Bomberman/PlayerEntity.cpp"; sourceTree = "<group>"; };
+		B03D1B1C17136AC300C20A0E /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerEntity.h; path = "../../Multiplayer Bomberman/PlayerEntity.h"; sourceTree = "<group>"; };
+		B03D1B1D17136AC300C20A0E /* PlayerStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerStats.h; path = "../../Multiplayer Bomberman/PlayerStats.h"; sourceTree = "<group>"; };
+		B03D1B1E17136AC300C20A0E /* PlayState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayState.cpp; path = "../../Multiplayer Bomberman/PlayState.cpp"; sourceTree = "<group>"; };
+		B03D1B1F17136AC300C20A0E /* PlayState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayState.h; path = "../../Multiplayer Bomberman/PlayState.h"; sourceTree = "<group>"; };
+		B03D1B2017136AC300C20A0E /* Profiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Profiler.cpp; path = "../../Multiplayer Bomberman/Profiler.cpp"; sourceTree = "<group>"; };
+		B03D1B2117136AC300C20A0E /* Profiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Profiler.h; path = "../../Multiplayer Bomberman/Profiler.h"; sourceTree = "<group>"; };
+		B03D1B2417136AC300C20A0E /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rectangle.h; path = "../../Multiplayer Bomberman/Rectangle.h"; sourceTree = "<group>"; };
+		B03D1B2517136AC300C20A0E /* ResourceFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ResourceFactory.cpp; path = "../../Multiplayer Bomberman/ResourceFactory.cpp"; sourceTree = "<group>"; };
+		B03D1B2617136AC300C20A0E /* ResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceFactory.h; path = "../../Multiplayer Bomberman/ResourceFactory.h"; sourceTree = "<group>"; };
+		B03D1B2717136AC300C20A0E /* SDL_Collide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDL_Collide.h; path = "../../Multiplayer Bomberman/SDL_Collide.h"; sourceTree = "<group>"; };
+		B03D1B2817136AC300C20A0E /* SoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoundManager.cpp; path = "../../Multiplayer Bomberman/SoundManager.cpp"; sourceTree = "<group>"; };
+		B03D1B2917136AC300C20A0E /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundManager.h; path = "../../Multiplayer Bomberman/SoundManager.h"; sourceTree = "<group>"; };
+		B03D1B2A17136AC300C20A0E /* SplashState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SplashState.cpp; path = "../../Multiplayer Bomberman/SplashState.cpp"; sourceTree = "<group>"; };
+		B03D1B2B17136AC300C20A0E /* SplashState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplashState.h; path = "../../Multiplayer Bomberman/SplashState.h"; sourceTree = "<group>"; };
+		B03D1B2C17136AC300C20A0E /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sprite.cpp; path = "../../Multiplayer Bomberman/Sprite.cpp"; sourceTree = "<group>"; };
+		B03D1B2D17136AC300C20A0E /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sprite.h; path = "../../Multiplayer Bomberman/Sprite.h"; sourceTree = "<group>"; };
+		B03D1B2E17136AC300C20A0E /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = State.h; path = "../../Multiplayer Bomberman/State.h"; sourceTree = "<group>"; };
+		B03D1B2F17136AC300C20A0E /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = "../../Multiplayer Bomberman/StateMachine.h"; sourceTree = "<group>"; };
+		B03D1B3017136AC300C20A0E /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringUtils.h; path = "../../Multiplayer Bomberman/StringUtils.h"; sourceTree = "<group>"; };
+		B03D1B3117136AC300C20A0E /* TextManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextManager.cpp; path = "../../Multiplayer Bomberman/TextManager.cpp"; sourceTree = "<group>"; };
+		B03D1B3217136AC300C20A0E /* TextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextManager.h; path = "../../Multiplayer Bomberman/TextManager.h"; sourceTree = "<group>"; };
+		B03D1B3317136AC300C20A0E /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = "../../Multiplayer Bomberman/Timer.h"; sourceTree = "<group>"; };
+		B03D1B3417136AC300C20A0E /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = "../../Multiplayer Bomberman/types.h"; sourceTree = "<group>"; };
+		B03D1B3517136AC300C20A0E /* Visualisation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Visualisation.cpp; path = "../../Multiplayer Bomberman/Visualisation.cpp"; sourceTree = "<group>"; };
+		B03D1B3617136AC300C20A0E /* Visualisation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Visualisation.h; path = "../../Multiplayer Bomberman/Visualisation.h"; sourceTree = "<group>"; };
+		B03D1B3717136AC300C20A0E /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = "../../Multiplayer Bomberman/World.cpp"; sourceTree = "<group>"; };
+		B03D1B3817136AC300C20A0E /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = "../../Multiplayer Bomberman/World.h"; sourceTree = "<group>"; };
+		B08DD797173E946200BAF6EC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		B08DD799173E946900BAF6EC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B03D1ADF17136A9000C20A0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B08DD79A173E946900BAF6EC /* Cocoa.framework in Frameworks */,
+				B08DD798173E946200BAF6EC /* OpenGL.framework in Frameworks */,
+				B021D507173E8EC400B354B8 /* libSDLmain.a in Frameworks */,
+				B021D509173E8EC800B354B8 /* libSDL.a in Frameworks */,
+				B021D50D173E8EE500B354B8 /* libSDL_ttf.a in Frameworks */,
+				B00FFF4E173FCB7E00766F50 /* libjson.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B03D1AD917136A9000C20A0E = {
+			isa = PBXGroup;
+			children = (
+				B00FFF4D173FCB7E00766F50 /* libjson.a */,
+				B08DD799173E946900BAF6EC /* Cocoa.framework */,
+				B08DD797173E946200BAF6EC /* OpenGL.framework */,
+				B021D50C173E8EE500B354B8 /* libSDL_ttf.a */,
+				B021D50A173E8ED400B354B8 /* libSDL_image.a */,
+				B021D508173E8EC800B354B8 /* libSDL.a */,
+				B021D506173E8EC400B354B8 /* libSDLmain.a */,
+				B03D1AE417136A9000C20A0E /* Bomberman-ish */,
+				B03D1AE317136A9000C20A0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B03D1AE317136A9000C20A0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B03D1AE217136A9000C20A0E /* Bomberman-ish */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B03D1AE417136A9000C20A0E /* Bomberman-ish */ = {
+			isa = PBXGroup;
+			children = (
+				B08DD7A0173E988700BAF6EC /* Sound */,
+				B08DD79F173E97CC00BAF6EC /* Game States */,
+				B08DD79E173E976D00BAF6EC /* AI */,
+				B08DD79D173E976300BAF6EC /* Utils */,
+				B08DD79C173E975A00BAF6EC /* Graphics */,
+				B08DD79B173E974E00BAF6EC /* Game */,
+				B03D1B0617136AC300C20A0E /* FastDelegate */,
+				B03D1B0F17136AC300C20A0E /* Main.cpp */,
+				B03D1AE717136A9000C20A0E /* Bomberman_ish.1 */,
+			);
+			path = "Bomberman-ish";
+			sourceTree = "<group>";
+		};
+		B03D1B0617136AC300C20A0E /* FastDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B03D1B0717136AC300C20A0E /* FastDelegate.h */,
+				B03D1B0817136AC300C20A0E /* FastDelegateBind.h */,
+			);
+			name = FastDelegate;
+			path = "../../Multiplayer Bomberman/FastDelegate";
+			sourceTree = "<group>";
+		};
+		B08DD79B173E974E00BAF6EC /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				B03D1AFD17136AC300C20A0E /* Components.h */,
+				B03D1B1A17136AC300C20A0E /* Parser.h */,
+				B03D1B2417136AC300C20A0E /* Rectangle.h */,
+				B03D1B0017136AC300C20A0E /* Entity.h */,
+				B03D1B0117136AC300C20A0E /* EntityImpl.h */,
+				B03D1AFE17136AC300C20A0E /* Engine.cpp */,
+				B03D1AFF17136AC300C20A0E /* Engine.h */,
+				B03D1B0B17136AC300C20A0E /* Level.cpp */,
+				B03D1B0C17136AC300C20A0E /* Level.h */,
+				B03D1B1417136AC300C20A0E /* MessageEvent.h */,
+				B03D1B1517136AC300C20A0E /* Messenger.cpp */,
+				B03D1B1617136AC300C20A0E /* Messenger.h */,
+				B03D1B3717136AC300C20A0E /* World.cpp */,
+				B03D1B3817136AC300C20A0E /* World.h */,
+				B03D1B0217136AC300C20A0E /* Events.cpp */,
+				B03D1B0317136AC300C20A0E /* Events.h */,
+				B03D1B0417136AC300C20A0E /* Explosion.cpp */,
+				B03D1B0517136AC300C20A0E /* Explosion.h */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		B08DD79C173E975A00BAF6EC /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				B03D1B3117136AC300C20A0E /* TextManager.cpp */,
+				B03D1B3217136AC300C20A0E /* TextManager.h */,
+				B03D1B0917136AC300C20A0E /* GameMenu.cpp */,
+				B03D1B0A17136AC300C20A0E /* GameMenu.h */,
+				B03D1AF417136AC300C20A0E /* BitmapFont.cpp */,
+				B03D1AF517136AC300C20A0E /* BitmapFont.h */,
+				B03D1B2C17136AC300C20A0E /* Sprite.cpp */,
+				B03D1B2D17136AC300C20A0E /* Sprite.h */,
+				B03D1B3517136AC300C20A0E /* Visualisation.cpp */,
+				B03D1B3617136AC300C20A0E /* Visualisation.h */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		B08DD79D173E976300BAF6EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B03D1B2517136AC300C20A0E /* ResourceFactory.cpp */,
+				B03D1B2617136AC300C20A0E /* ResourceFactory.h */,
+				B03D1B0D17136AC300C20A0E /* Logger.cpp */,
+				B03D1B0E17136AC300C20A0E /* Logger.h */,
+				B03D1B1017136AC300C20A0E /* maths.cpp */,
+				B03D1B1117136AC300C20A0E /* maths.h */,
+				B03D1B1D17136AC300C20A0E /* PlayerStats.h */,
+				B03D1B2017136AC300C20A0E /* Profiler.cpp */,
+				B03D1B2117136AC300C20A0E /* Profiler.h */,
+				B03D1B2717136AC300C20A0E /* SDL_Collide.h */,
+				B03D1B3017136AC300C20A0E /* StringUtils.h */,
+				B03D1B3317136AC300C20A0E /* Timer.h */,
+				B03D1B3417136AC300C20A0E /* types.h */,
+				B03D1AFC17136AC300C20A0E /* Common.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		B08DD79E173E976D00BAF6EC /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				B03D1B2E17136AC300C20A0E /* State.h */,
+				B03D1B2F17136AC300C20A0E /* StateMachine.h */,
+				B03D1B1B17136AC300C20A0E /* PlayerEntity.cpp */,
+				B03D1B1C17136AC300C20A0E /* PlayerEntity.h */,
+				B03D1AF617136AC300C20A0E /* BombEntity.cpp */,
+				B03D1AF717136AC300C20A0E /* BombEntity.h */,
+				B03D1AF817136AC300C20A0E /* BotEntity.cpp */,
+				B03D1AF917136AC300C20A0E /* BotEntity.h */,
+				B03D1AFA17136AC300C20A0E /* BotStates.cpp */,
+				B03D1AFB17136AC300C20A0E /* BotStates.h */,
+				B03D1AEE17136AC300C20A0E /* AStar.cpp */,
+				B03D1AEF17136AC300C20A0E /* AStar.h */,
+				B03D1AF017136AC300C20A0E /* BaseEntity.cpp */,
+				B03D1AF117136AC300C20A0E /* BaseEntity.h */,
+				B03D1AF217136AC300C20A0E /* BaseState.cpp */,
+				B03D1AF317136AC300C20A0E /* BaseState.h */,
+			);
+			name = AI;
+			sourceTree = "<group>";
+		};
+		B08DD79F173E97CC00BAF6EC /* Game States */ = {
+			isa = PBXGroup;
+			children = (
+				B03D1B1E17136AC300C20A0E /* PlayState.cpp */,
+				B03D1B1F17136AC300C20A0E /* PlayState.h */,
+				B03D1B2A17136AC300C20A0E /* SplashState.cpp */,
+				B03D1B2B17136AC300C20A0E /* SplashState.h */,
+				B03D1B1217136AC300C20A0E /* MenuState.cpp */,
+				B03D1B1317136AC300C20A0E /* MenuState.h */,
+			);
+			name = "Game States";
+			sourceTree = "<group>";
+		};
+		B08DD7A0173E988700BAF6EC /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				B03D1B2817136AC300C20A0E /* SoundManager.cpp */,
+				B03D1B2917136AC300C20A0E /* SoundManager.h */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B03D1AE117136A9000C20A0E /* Bomberman-ish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B03D1AEB17136A9000C20A0E /* Build configuration list for PBXNativeTarget "Bomberman-ish" */;
+			buildPhases = (
+				B03D1ADE17136A9000C20A0E /* Sources */,
+				B03D1ADF17136A9000C20A0E /* Frameworks */,
+				B03D1AE017136A9000C20A0E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bomberman-ish";
+			productName = "Bomberman-ish";
+			productReference = B03D1AE217136A9000C20A0E /* Bomberman-ish */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B03D1ADA17136A9000C20A0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Steven Gleed";
+			};
+			buildConfigurationList = B03D1ADD17136A9000C20A0E /* Build configuration list for PBXProject "Bomberman-ish" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B03D1AD917136A9000C20A0E;
+			productRefGroup = B03D1AE317136A9000C20A0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B03D1AE117136A9000C20A0E /* Bomberman-ish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B03D1ADE17136A9000C20A0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B03D1B3917136AC300C20A0E /* AStar.cpp in Sources */,
+				B03D1B3A17136AC300C20A0E /* BaseEntity.cpp in Sources */,
+				B03D1B3B17136AC300C20A0E /* BaseState.cpp in Sources */,
+				B03D1B3C17136AC300C20A0E /* BitmapFont.cpp in Sources */,
+				B03D1B3D17136AC300C20A0E /* BombEntity.cpp in Sources */,
+				B03D1B3E17136AC300C20A0E /* BotEntity.cpp in Sources */,
+				B03D1B3F17136AC300C20A0E /* BotStates.cpp in Sources */,
+				B03D1B4017136AC300C20A0E /* Engine.cpp in Sources */,
+				B03D1B4117136AC300C20A0E /* Events.cpp in Sources */,
+				B03D1B4217136AC300C20A0E /* Explosion.cpp in Sources */,
+				B03D1B4317136AC300C20A0E /* GameMenu.cpp in Sources */,
+				B03D1B4417136AC300C20A0E /* Level.cpp in Sources */,
+				B03D1B4517136AC300C20A0E /* Logger.cpp in Sources */,
+				B03D1B4617136AC300C20A0E /* Main.cpp in Sources */,
+				B03D1B4717136AC300C20A0E /* maths.cpp in Sources */,
+				B03D1B4817136AC300C20A0E /* MenuState.cpp in Sources */,
+				B03D1B4917136AC300C20A0E /* Messenger.cpp in Sources */,
+				B03D1B4A17136AC300C20A0E /* PlayerEntity.cpp in Sources */,
+				B03D1B4B17136AC300C20A0E /* PlayState.cpp in Sources */,
+				B03D1B4C17136AC300C20A0E /* Profiler.cpp in Sources */,
+				B03D1B4D17136AC300C20A0E /* ResourceFactory.cpp in Sources */,
+				B03D1B4E17136AC300C20A0E /* SoundManager.cpp in Sources */,
+				B03D1B4F17136AC300C20A0E /* SplashState.cpp in Sources */,
+				B03D1B5017136AC300C20A0E /* Sprite.cpp in Sources */,
+				B03D1B5117136AC300C20A0E /* TextManager.cpp in Sources */,
+				B03D1B5217136AC300C20A0E /* Visualisation.cpp in Sources */,
+				B03D1B5317136AC300C20A0E /* World.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B03D1AE917136A9000C20A0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/sdl/2.0.11/include/sdl,
+					/usr/local/sdl/1.12.15/include/sdl,
+					/usr/local/Cellar/boost/1.53.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl/1.12.15/lib,
+					/usr/local/Cellar/sdl/2.0.11/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B03D1AEA17136A9000C20A0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/sdl/2.0.11/include/sdl,
+					/usr/local/sdl/1.12.15/include/sdl,
+					/usr/local/Cellar/boost/1.53.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl/1.12.15/lib,
+					/usr/local/Cellar/sdl/2.0.11/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B03D1AEC17136A9000C20A0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /usr/local/lib;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/boost/1.53.0/include/,
+					/usr/local/Cellar/sdl/1.2.15/include/SDL,
+					/usr/local/Cellar/sdl_ttf/2.0.11/include,
+					"/usr/local/Cellar/json-c/0.10/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl/1.2.15/lib,
+					/usr/local/Cellar/sdl_ttf/2.0.11/lib,
+					/usr/local/Cellar/sdl_image/1.2.12/lib,
+					"/usr/local/Cellar/json-c/0.10/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B03D1AED17136A9000C20A0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /usr/local/lib;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/boost/1.53.0/include/,
+					/usr/local/Cellar/sdl/1.2.15/include/SDL,
+					/usr/local/Cellar/sdl_ttf/2.0.11/include,
+					"/usr/local/Cellar/json-c/0.10/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl/1.2.15/lib,
+					/usr/local/Cellar/sdl_ttf/2.0.11/lib,
+					/usr/local/Cellar/sdl_image/1.2.12/lib,
+					"/usr/local/Cellar/json-c/0.10/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B03D1ADD17136A9000C20A0E /* Build configuration list for PBXProject "Bomberman-ish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B03D1AE917136A9000C20A0E /* Debug */,
+				B03D1AEA17136A9000C20A0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B03D1AEB17136A9000C20A0E /* Build configuration list for PBXNativeTarget "Bomberman-ish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B03D1AEC17136A9000C20A0E /* Debug */,
+				B03D1AED17136A9000C20A0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B03D1ADA17136A9000C20A0E /* Project object */;
+}

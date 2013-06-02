@@ -5,7 +5,7 @@
 #include <map>
 #include "maths.h"
 #include "MessageEvent.h"
-#include <boost\timer.hpp>
+#include <boost/timer.hpp>
 
 const int NUM_OF_KEYS = 10;
 

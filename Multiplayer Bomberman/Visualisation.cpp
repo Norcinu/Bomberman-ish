@@ -171,8 +171,8 @@ void Visualisation::CalculateFPS()
 
 	if(newTime - lastTime > 1000)
 	{
-		unsigned long newFPS = (frames * 1000 / (newTime - lastTime));
-		printf("FPS : %d\n", newFPS);
+		auto newFPS = (frames * 1000 / (newTime - lastTime));
+		printf("FPS : %ld\n", newFPS);
 		lastTime = newTime;
 		frames = 0;
 	}
@@ -224,7 +224,7 @@ void Visualisation::EndScene()
 	CalculateFPS();
 }
 
-void Visualisation::DrawSprite( const int id, const math::Vector2& frame,math::Vector2& pos )
+void Visualisation::DrawSprite( const int id, math::Vector2& frame,math::Vector2& pos )
 {
     //math::Vector2 rotated_position;
     //rotated_position.x = pos.x * std::cos(90.0f) - pos.y * std::sin(90.0f);

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Visualisation::DrawSprite(int, math::Vector2&amp;, math::Vector2&amp;):Visualisation.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Sprite::Load(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):Sprite.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "SplashState::Update(Engine*):SplashState.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "running_timer-&gt;Seconds() &gt; splash_run_time">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Timer::Seconds():Timer.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "1 * 1 * m_frequency">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SplashState::Initialise(Engine*):SplashState.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

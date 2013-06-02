@@ -17,7 +17,7 @@ public:
 	~Sprite();
 
 	bool Load(const std::string& filename);
-	void Render(SDL_Surface * screen, const math::Vector2& frame, /*const*/ math::Vector2& position);
+	void Render(SDL_Surface * screen, const math::Vector2& frame, math::Vector2& position);
 	SDL_Rect SpriteRectangle() const { return rec; }
 	SDL_Surface * RawSprite() const { return sprite; }
 

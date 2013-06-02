@@ -3,7 +3,7 @@
 #include "Messenger.h"
 #include "maths.h"
 #include <string>
-#include <boost\timer.hpp>
+#include <boost/timer.hpp>
 
 // need an input method for the bots.
 // and a better method than world->action(0) for the player.
@@ -37,7 +37,72 @@ Events::~Events(void)
 //void Events::Update(World * world)
 void Events::Update(Messenger * msg)
 {
-	while (SDL_PollEvent(&event))
+    if (SDL_PollEvent(&event)) {
+        switch (event.type) {
+            case SDL_QUIT:
+                running = false;
+                break;
+            /*case SDL_KEYDOWN:
+                switch (event.key.keysym.sym) {
+                    case :
+                        <#statements#>
+                        break;
+                        
+                    default:
+                        break;
+                }*/
+            default:
+                break;
+        }
+    }
+    
+    Uint8 * KeyState = SDL_GetKeyState(NULL);
+    auto it = keymapping.begin();
+    auto PressedKey = event.key.keysym.sym;
+    it = keymapping.find(PressedKey);
+    EventMessage_t msg_to_send;
+    
+    if (it != keymapping.end()) {
+        if (it->second == EVT_BACKWARD) {
+            FillMessage(&msg_to_send, 0, EventMessage_t::BACK);
+            msg->AddMessage(msg_to_send);
+        }
+        else if (it->second == EVT_FORWARD) {
+            FillMessage(&msg_to_send, 0, EventMessage_t::FORWARD);
+            msg->AddMessage(msg_to_send);
+        }
+        else if (it->second == EVT_LEFT) {
+            FillMessage(&msg_to_send, 0, EventMessage_t::LEFT);
+            msg->AddMessage(msg_to_send);
+        }
+        else if (it->second == EVT_RIGHT) {
+            FillMessage(&msg_to_send, 0, EventMessage_t::RIGHT);
+            msg->AddMessage(msg_to_send);
+        }
+    }
+ /*   if (KeyState[PressedKey] == it->second) {
+        FillMessage(&msg_to_send, 0, EventMessage_t::RIGHT);
+        msg->AddMessage(msg_to_send);
+    }
+    
+    if (KeyState[PressedKey] == it->second) {
+        FillMessage(&msg_to_send, 0, EventMessage_t::LEFT);
+        msg->AddMessage(msg_to_send);
+    }
+    
+    if (KeyState[PressedKey] == it->second) {
+        FillMessage(&msg_to_send, 0, EventMessage_t::FORWARD);
+        msg->AddMessage(msg_to_send);
+    }
+    
+    if (KeyState[PressedKey] == it->second) {
+        FillMessage(&msg_to_send, 0, EventMessage_t::BACK);
+        msg->AddMessage(msg_to_send);
+    }*/
+    
+    if (event.type == SDL_QUIT || event.key.keysym.sym == SDLK_ESCAPE)
+        running = false;
+/*	while (SDL_PollEvent(&event))
 	{
 		if (event.type == SDL_KEYDOWN)
 		{
@@ -70,13 +135,19 @@ void Events::Update(Messenger * msg)
 					FillMessage(&msg_to_send, 0, EventMessage_t::RIGHT);
 					msg->AddMessage(msg_to_send);
 					break;
+                case EVT_TOGGLE_SOUND_STREAM:
+                case EVT_PREVIOUS_SONG:
+                case EVT_NEXT_SONG:
+                case EVT_VOLUME_DOWN:
+                case EVT_VOLUME_UP:
+                    break;
 				}
 			}
 		}
 		
-		if (event.type==SDL_QUIT || event.key.keysym.sym == SDLK_ESCAPE)
-			running=false;
-	}
+		if (event.type == SDL_QUIT || event.key.keysym.sym == SDLK_ESCAPE)
+			running = false;
+	}*/
 }
 
 void Events::SetKeyMap()

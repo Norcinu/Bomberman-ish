@@ -101,7 +101,7 @@ void AStar::Search( std::vector<node_t>& path, const math::Vector2& position, co
 	}
 
 	bool route = false;
-	int current_node = closed_list.size() - 1;
+	auto current_node = closed_list.size() - 1;
 	
 	while (!route)
 	{

@@ -2,7 +2,7 @@
 #define TEXT_MANAGER_H
 
 #include <SDL.h>
-#include <SDL_ttf.h>
+#include <SDL/SDL_ttf.h>
 #include <vector>
 #include <string>
 

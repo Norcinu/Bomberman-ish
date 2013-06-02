@@ -44,6 +44,7 @@ private:
 	public:
 		Timer()
 		{
+            Reset();
 		}
 
 		~Timer()
@@ -52,18 +53,20 @@ private:
 
 		void Reset()
 		{
+            gettimeofday(&StartTime, NULL);
 		}
 
 		double Seconds()
 		{
-			return 1 * 1 * m_frequency;
+            gettimeofday(&EndTime,NULL);
+            return (EndTime.tv_sec - StartTime.tv_sec);
 		}
 
 		double Milliseconds() { return Seconds() * 1000.0; }
 
 		private:
-			double m_frequency;
-			unsigned long long m_baseTime;
+            timeval StartTime;
+            timeval EndTime;
     };
 
 #endif // ifdef WIN32 ELSE 

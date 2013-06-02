@@ -67,8 +67,12 @@ bool Sprite::Load( const std::string& filename )
 	}
 
 	config.close();
-
-	sprite = SDL_LoadBMP(description[0].c_str());	
+    auto st = description[0].substr(0, description[0].size()-1);
+	sprite = SDL_LoadBMP(st.c_str());
+    if (!sprite) {
+        auto a  = SDL_GetError();
+        std::cout << a << std::endl;
+    }
 	frame_width = ConvertStringToInt(description[1]);
 	frame_height = ConvertStringToInt(description[2]);
 	start_frame = ConvertStringToInt(description[3]);
@@ -155,7 +159,7 @@ void Sprite::Render( SDL_Surface * screen, const math::Vector2& frame, /*const*/
 	SDL_BlitSurface(sprite, &source, screen, &rec);
 
 #pragma region OPENGL_RENDERING
-#else USING_OPENGL
+#else //USING_OPENGL
 	glLoadIdentity();
 	glTranslatef(rec.x, rec.y, 0 ); // was position
 	glBindTexture(GL_TEXTURE_2D, texture);

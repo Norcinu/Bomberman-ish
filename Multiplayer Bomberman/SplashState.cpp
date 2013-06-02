@@ -11,7 +11,7 @@
 
 SplashState SplashState::instance;
 
-SplashState::SplashState(void) : running_timer(nullptr), splash_sprite_id(0), splash_run_time(1) // was 5
+SplashState::SplashState(void) : running_timer(nullptr), splash_sprite_id(0), splash_run_time(2)
 {
 }
 
@@ -23,7 +23,7 @@ bool SplashState::Initialise(Engine * eng)
 {
 	std::cout << "Entering SplashState..." << std::endl;
 
-	if (!eng->GetRendererPtr()->AddSprite(&splash_sprite_id, std::string("data\\bitmaps\\splash.spr")))
+	if (!eng->GetRendererPtr()->AddSprite(&splash_sprite_id, std::string("data//bitmaps//splash.spr")))
 		return false;
 
 	running_timer = new Timer;
@@ -50,14 +50,16 @@ void SplashState::HandleEvent(Engine * eng)
 
 void SplashState::Update(Engine * eng)
 {
-	if (running_timer->Seconds() > splash_run_time)
+    auto seconds = running_timer->Seconds();
+	if (seconds > splash_run_time)
 		change_state = true;
 }
 
 void SplashState::Render(Engine * eng)
 {
+    math::Vector2 mac(0,0);
 	eng->GetRendererPtr()->BeginScene();
-	eng->GetRendererPtr()->DrawSprite(splash_sprite_id, math::Vector2(0,0), math::Vector2(0,0));
+	eng->GetRendererPtr()->DrawSprite(splash_sprite_id, mac, mac);
 	eng->GetRendererPtr()->EndScene();
 }
 

@@ -17,7 +17,7 @@ PlayState::~PlayState(void)
 bool PlayState::Initialise(Engine * eng)
 {
 	std::cout << "Entering PlayState..." << std::endl;
-	if (!eng->GetWorldModelPtr()->Initialise(std::string("data\\levels\\empty.lvl"), eng->GetRendererPtr()))
+	if (!eng->GetWorldModelPtr()->Initialise(std::string("data/levels/empty.lvl"), eng->GetRendererPtr()))
 		return false;
 
 	return true;
