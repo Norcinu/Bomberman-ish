@@ -23,7 +23,7 @@ bool SplashState::Initialise(Engine * eng)
 {
 	std::cout << "Entering SplashState..." << std::endl;
 
-	if (!eng->GetRendererPtr()->AddSprite(&splash_sprite_id, std::string("data//bitmaps//splash.spr")))
+	if (!eng->GetRendererPtr()->AddSprite(&splash_sprite_id, std::string("data/bitmaps/splash.spr")))
 		return false;
 
 	running_timer = new Timer;

@@ -23,9 +23,9 @@ void GameMenu::CleanUp()
 bool GameMenu::Initialise()
 {
     int id = 0;
-    renderer->AddSprite(&id, "data\\bmp\\new.bmp");
-    renderer->AddSprite(&id, "data\\bmp\\load.bmp");
-    renderer->AddSprite(&id, "data\\bmp\\menu_arrow.bmp");
+    renderer->AddSprite(&id, "data/bmp/new.bmp");
+    renderer->AddSprite(&id, "data/bmp/load.bmp");
+    renderer->AddSprite(&id, "data/bmp/menu_arrow.bmp");
 
     return true;
 }

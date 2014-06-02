@@ -22,17 +22,6 @@
 
 int main(int argc, char *argv[])
 {
-    /*int num1, num2, result;
-    __asm {
-        MOV num1, 248
-        MOV num2, 405
-        MOV EAX, num1
-        ADD EAX, num2
-        MOV result, EAX
-    }
-    std::cout << num1 << std::endl;
-    std::cout << num2 << std::endl;
-    std::cout << result << std::endl;*/
     json_object * str = json_object_new_string("cunt\n");
     std::cout << "My string is " << json_object_get_string(str);
 #ifdef __APPLE__
@@ -50,7 +39,7 @@ int main(int argc, char *argv[])
 #endif
 #ifdef _DEBUG
 #ifdef __LINUX__ // !!!! MOVE THIS TO MAIN STARTUP !!!!
-	const std::string delim = "//"
+	const std::string delim = "/"
 #else
 	const std::string delim = "\\";
 #endif // __LINUX__

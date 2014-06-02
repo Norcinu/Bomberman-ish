@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B00FFF4E173FCB7E00766F50 /* libjson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B00FFF4D173FCB7E00766F50 /* libjson.a */; };
 		B021D507173E8EC400B354B8 /* libSDLmain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B021D506173E8EC400B354B8 /* libSDLmain.a */; };
 		B021D509173E8EC800B354B8 /* libSDL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B021D508173E8EC800B354B8 /* libSDL.a */; };
 		B021D50D173E8EE500B354B8 /* libSDL_ttf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B021D50C173E8EE500B354B8 /* libSDL_ttf.a */; };
@@ -41,6 +40,9 @@
 		B03D1B5317136AC300C20A0E /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D1B3717136AC300C20A0E /* World.cpp */; };
 		B08DD798173E946200BAF6EC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08DD797173E946200BAF6EC /* OpenGL.framework */; };
 		B08DD79A173E946900BAF6EC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08DD799173E946900BAF6EC /* Cocoa.framework */; };
+		B0B745B3193D25BD0074916A /* ResourceList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B745B1193D25BD0074916A /* ResourceList.cpp */; };
+		B0DA06A5191ECDEA00984916 /* libSDL_image.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DA06A4191ECDEA00984916 /* libSDL_image.a */; };
+		B0DA06A7191ECE2600984916 /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DA06A6191ECE2600984916 /* libjson-c.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,10 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B00FFF4D173FCB7E00766F50 /* libjson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjson.a; path = "../../../../../../usr/local/Cellar/json-c/0.10/lib/libjson.a"; sourceTree = "<group>"; };
 		B021D506173E8EC400B354B8 /* libSDLmain.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDLmain.a; path = ../../../../../../usr/local/Cellar/sdl/1.2.15/lib/libSDLmain.a; sourceTree = "<group>"; };
 		B021D508173E8EC800B354B8 /* libSDL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL.a; path = ../../../../../../usr/local/Cellar/sdl/1.2.15/lib/libSDL.a; sourceTree = "<group>"; };
-		B021D50A173E8ED400B354B8 /* libSDL_image.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL_image.a; path = ../../../../../../usr/local/Cellar/sdl_image/1.2.12/lib/libSDL_image.a; sourceTree = "<group>"; };
 		B021D50C173E8EE500B354B8 /* libSDL_ttf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL_ttf.a; path = ../../../../../../usr/local/Cellar/sdl_ttf/2.0.11/lib/libSDL_ttf.a; sourceTree = "<group>"; };
 		B03D1AE217136A9000C20A0E /* Bomberman-ish */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Bomberman-ish"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03D1AE717136A9000C20A0E /* Bomberman_ish.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Bomberman_ish.1; sourceTree = "<group>"; };
@@ -135,6 +135,10 @@
 		B03D1B3817136AC300C20A0E /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = "../../Multiplayer Bomberman/World.h"; sourceTree = "<group>"; };
 		B08DD797173E946200BAF6EC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		B08DD799173E946900BAF6EC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B0B745B1193D25BD0074916A /* ResourceList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ResourceList.cpp; path = ../ResourceList.cpp; sourceTree = "<group>"; };
+		B0B745B2193D25BD0074916A /* ResourceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceList.h; path = ../ResourceList.h; sourceTree = "<group>"; };
+		B0DA06A4191ECDEA00984916 /* libSDL_image.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL_image.a; path = ../../../../../../usr/local/Cellar/sdl_image/1.2.12_1/lib/libSDL_image.a; sourceTree = "<group>"; };
+		B0DA06A6191ECE2600984916 /* libjson-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjson-c.a"; path = "../../../../../../usr/local/Cellar/json-c/0.11/lib/libjson-c.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,12 +146,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DA06A7191ECE2600984916 /* libjson-c.a in Frameworks */,
 				B08DD79A173E946900BAF6EC /* Cocoa.framework in Frameworks */,
 				B08DD798173E946200BAF6EC /* OpenGL.framework in Frameworks */,
 				B021D507173E8EC400B354B8 /* libSDLmain.a in Frameworks */,
 				B021D509173E8EC800B354B8 /* libSDL.a in Frameworks */,
+				B0DA06A5191ECDEA00984916 /* libSDL_image.a in Frameworks */,
 				B021D50D173E8EE500B354B8 /* libSDL_ttf.a in Frameworks */,
-				B00FFF4E173FCB7E00766F50 /* libjson.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,11 +162,11 @@
 		B03D1AD917136A9000C20A0E = {
 			isa = PBXGroup;
 			children = (
-				B00FFF4D173FCB7E00766F50 /* libjson.a */,
 				B08DD799173E946900BAF6EC /* Cocoa.framework */,
 				B08DD797173E946200BAF6EC /* OpenGL.framework */,
+				B0DA06A6191ECE2600984916 /* libjson-c.a */,
+				B0DA06A4191ECDEA00984916 /* libSDL_image.a */,
 				B021D50C173E8EE500B354B8 /* libSDL_ttf.a */,
-				B021D50A173E8ED400B354B8 /* libSDL_image.a */,
 				B021D508173E8EC800B354B8 /* libSDL.a */,
 				B021D506173E8EC400B354B8 /* libSDLmain.a */,
 				B03D1AE417136A9000C20A0E /* Bomberman-ish */,
@@ -249,6 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				B03D1B2517136AC300C20A0E /* ResourceFactory.cpp */,
+				B0B745B1193D25BD0074916A /* ResourceList.cpp */,
+				B0B745B2193D25BD0074916A /* ResourceList.h */,
 				B03D1B2617136AC300C20A0E /* ResourceFactory.h */,
 				B03D1B0D17136AC300C20A0E /* Logger.cpp */,
 				B03D1B0E17136AC300C20A0E /* Logger.h */,
@@ -367,6 +374,7 @@
 				B03D1B3B17136AC300C20A0E /* BaseState.cpp in Sources */,
 				B03D1B3C17136AC300C20A0E /* BitmapFont.cpp in Sources */,
 				B03D1B3D17136AC300C20A0E /* BombEntity.cpp in Sources */,
+				B0B745B3193D25BD0074916A /* ResourceList.cpp in Sources */,
 				B03D1B3E17136AC300C20A0E /* BotEntity.cpp in Sources */,
 				B03D1B3F17136AC300C20A0E /* BotStates.cpp in Sources */,
 				B03D1B4017136AC300C20A0E /* Engine.cpp in Sources */,
@@ -475,16 +483,17 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = /usr/local/lib;
 				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/boost/1.53.0/include/,
+					/usr/local/Cellar/boost/1.55.0/include/,
 					/usr/local/Cellar/sdl/1.2.15/include/SDL,
 					/usr/local/Cellar/sdl_ttf/2.0.11/include,
-					"/usr/local/Cellar/json-c/0.10/include",
+					"/usr/local/Cellar/json-c/0.11/include",
+					/usr/local/Cellar/sdl_image/1.2.12_1/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/Cellar/sdl/1.2.15/lib,
 					/usr/local/Cellar/sdl_ttf/2.0.11/lib,
-					/usr/local/Cellar/sdl_image/1.2.12/lib,
-					"/usr/local/Cellar/json-c/0.10/lib",
+					/usr/local/Cellar/sdl_image/1.2.12_1/lib,
+					"/usr/local/Cellar/json-c/0.11/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -495,16 +504,17 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = /usr/local/lib;
 				HEADER_SEARCH_PATHS = (
-					/usr/local/Cellar/boost/1.53.0/include/,
+					/usr/local/Cellar/boost/1.55.0/include/,
 					/usr/local/Cellar/sdl/1.2.15/include/SDL,
 					/usr/local/Cellar/sdl_ttf/2.0.11/include,
-					"/usr/local/Cellar/json-c/0.10/include",
+					"/usr/local/Cellar/json-c/0.11/include",
+					/usr/local/Cellar/sdl_image/1.2.12_1/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/Cellar/sdl/1.2.15/lib,
 					/usr/local/Cellar/sdl_ttf/2.0.11/lib,
-					/usr/local/Cellar/sdl_image/1.2.12/lib,
-					"/usr/local/Cellar/json-c/0.10/lib",
+					/usr/local/Cellar/sdl_image/1.2.12_1/lib,
+					"/usr/local/Cellar/json-c/0.11/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -67,11 +67,11 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
 		return false;
 
 	int gid1 = 0;
-    if (!vis->AddSprite(&gid1, std::string("data//bitmaps//brick.spr")))
+    if (!vis->AddSprite(&gid1, std::string("data/bitmaps/brick.spr")))
 		return false;
 
 	int gid2 = 0;
-	if (!vis->AddSprite(&gid2, std::string("data//bitmaps//destroyable_brick.spr")))
+	if (!vis->AddSprite(&gid2, std::string("data/bitmaps/destroyable_brick.spr")))
 		return false;
 	
 	if (!current_level->LoadData(assets, gid1, gid2))
@@ -79,7 +79,7 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
 
 	current_level->GetSpawnPoints(spawns);
 	
-	if (!vis->AddSprite(&gid1, std::string("data//bitmaps//sprite.spr")))
+	if (!vis->AddSprite(&gid1, std::string("data/bitmaps/sprite.spr")))
 		return false;
 
     
@@ -93,7 +93,7 @@ bool World::Initialise(const std::string& assets, Visualisation * vis)
     myid = vis->GetSpriteID("bomb");
     std::cout << "myid is " << myid << "\n";
 
-    if (!vis->AddSprite(&gid1, std::string("data//bitmaps//bomb.spr")))
+    if (!vis->AddSprite(&gid1, std::string("data/bitmaps/bomb.spr")))
 		return false;
 	
 	CreateBombList(gid1);
